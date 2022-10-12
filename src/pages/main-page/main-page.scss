@@ -1,1 +1,12 @@
 @import '~/layouts/main-layout/main-layout';
+
+.main-page {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  column-gap: 32px;
+  padding-top: 48px;
+
+  &__aside {
+    padding-top: 168px;
+  }
+}

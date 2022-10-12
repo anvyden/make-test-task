@@ -1,0 +1,10 @@
+include ~/components/menu/menu
+
+mixin aside()
+  aside.aside 
+    +menu([
+      { text: 'Напутственное слово', link: '#' },
+      { text: 'Сетка', link: '#' },
+      { text: 'Типографика', link: '#' },
+      { text: 'UI', link: '#' },
+    ])

@@ -1,0 +1,35 @@
+@import '~/scss/variables';
+
+.menu {
+  display: flex;
+
+  &__list {
+    list-style-type: none;
+  }
+
+  &__item {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-link {
+      font-size: 14px;
+      line-height: 20px;
+      color: $secondaryColor;
+      cursor: pointer;
+      text-decoration: none;
+      outline: none;
+
+      &--active {
+        color: $activeColor;
+      }
+
+      &:hover,
+      &:focus-visible {
+        color: $primaryColor;
+      }
+    }
+  }
+}

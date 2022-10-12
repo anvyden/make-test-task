@@ -1,7 +1,27 @@
 include ~/components/logo/logo
+include ~/components/typography/typography
 
 mixin header()
   .header
-    .header__logo
-      +logo
-    .header__menu 123
+    .header__info
+      .header__logo
+        +logo
+      .header__person 
+        .header__person-surname 
+          +typography({
+            text: 'Наркевич',
+            type: 'p',
+            modifier: 'additional',
+            weight: 'medium',
+            color: 'primary'
+          })
+        .header__person-name
+          +typography({
+            text: 'Денис Владимирович',
+            type: 'p',
+            modifier: 'additional',
+            color: 'secondary'
+          })
+    .header__burger
+      .header__burger-line
+      .header__burger-line

@@ -1,4 +1,29 @@
+@import '~/scss/variables';
+
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
+  &__info {
+    display: flex;
+    gap: 24px;
+  }
+
+  &__burger {
+    height: 10px;
+
+    &-line {
+      width: 32px;
+      height: 2px;
+      background-color: $primaryColor;
+      text-align: right;
+
+      &:last-child {
+        margin-top: 6px;
+        width: 24px;
+        margin: 6px 0 0 auto;
+      }
+    }
+  }
 }

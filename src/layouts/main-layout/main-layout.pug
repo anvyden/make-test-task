@@ -10,7 +10,8 @@ html(lang="ru")
     meta(name="keywords", content='test task')
     title 'Test task'
   body
-    .page-container
-      block header
-        +header
-      block content
+    .page-layout
+      .page-layout__container
+        block header
+          +header
+        block content

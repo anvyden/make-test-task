@@ -1,6 +1,7 @@
-.page-container {
-  margin: 0 auto;
-  max-width: 1312px;
-  display: grid;
-  gap: 32px;
+.page-layout {
+  &__container {
+    margin: 0 auto;
+    max-width: 1376px;
+    padding: 32px;
+  }
 }

@@ -1,0 +1,11 @@
+@import '~/scss/variables';
+
+.task {
+  &__title {
+    margin-bottom: 16px;
+  }
+
+  &__level {
+    margin-bottom: 64px;
+  }
+}
