@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'Graphik';
+  src: url('./regular/Graphik-Regular-Web.eot');
+  src: url('./regular/Graphik-Regular-Web.eot?#iefix')
+      format('embedded-opentype'),
+    url('./regular/Graphik-Regular-Web.woff2') format('woff2'),
+    url('./regular/Graphik-Regular-Web.woff') format('woff'),
+    url('./regular/Graphik-Regular-Web.ttf') format('truetype');
+}
+
+@font-face {
+  font-style: italic;
+  font-weight: normal;
+  font-family: 'Graphik';
+  src: url('./regularItalic/Graphik-RegularItalic-Web.eot');
+  src: url('./regularItalic/Graphik-RegularItalic-Web.eot?#iefix')
+      format('embedded-opentype'),
+    url('./regularItalic/Graphik-RegularItalic-Web.woff2') format('woff2'),
+    url('./regularItalic/Graphik-RegularItalic-Web.woff') format('woff'),
+    url('./regularItalic/Graphik-RegularItalic-Web.ttf') format('truetype');
+}
+
+@font-face {
+  font-weight: 500;
+  font-style: normal;
+  font-family: 'Graphik';
+  src: url('./medium/Graphik-Medium-Web.eot');
+  src: url('./medium/Graphik-Medium-Web.eot?#iefix') format('embedded-opentype'),
+    url('./medium/Graphik-Medium-Web.woff2') format('woff2'),
+    url('./medium/Graphik-Medium-Web.woff') format('woff'),
+    url('./medium/Graphik-Medium-Web.ttf') format('truetype');
+}
+
+@font-face {
+  font-weight: 700;
+  font-style: normal;
+  font-family: 'Graphik';
+  src: url('./bold/Graphik-Bold-Web.eot');
+  src: url('./bold/Graphik-Bold-Web.eot?#iefix') format('embedded-opentype'),
+    url('./bold/Graphik-Bold-Web.woff2') format('woff2'),
+    url('./bold/Graphik-Bold-Web.woff') format('woff'),
+    url('./bold/Graphik-Bold-Web.ttf') format('truetype');
+}
+
+@font-face {
+  font-weight: 900;
+  font-style: normal;
+  font-family: 'Graphik';
+  src: url('./black/Graphik-Black-Web.eot');
+  src: url('./black/Graphik-Black-Web.eot?#iefix') format('embedded-opentype'),
+    url('./black/Graphik-Black-Web.woff2') format('woff2'),
+    url('./black/Graphik-Black-Web.woff') format('woff'),
+    url('./black/Graphik-Black-Web.ttf') format('truetype');
+}
