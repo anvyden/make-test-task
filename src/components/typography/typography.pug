@@ -1,0 +1,43 @@
+mixin typography(options = {})
+  - 
+    const {
+      text,
+      type,
+      modifier,
+      color,
+      weight,
+      hasUpper
+    } = options
+
+    const types = ['h1', 'h2', 'h3', 'h4']
+    const modifiers = ['lead', 'large', 'additional']
+    const colors = ['primary', 'secondary']
+    const weights = ['bold', 'medium']
+
+    const mainClass = 'typography'
+    const typeModifier = types.includes(type) && `typography--type-${type}`
+    const fontModifier = !types.includes(type) && modifiers.includes(modifier) && `typography--${modifier}`
+    const colorModifier = colors.includes(color) && `typography--color-${color}`
+    const weightModifier = weights.includes(weight) && `typography--${weight}`
+    const upperModifier = hasUpper && 'text--upper'
+
+    const attrs = {
+      class: [
+        mainClass,
+        typeModifier,
+        fontModifier,
+        colorModifier,
+        weightModifier,
+        upperModifier
+      ]
+    }
+
+    const typeTag = {
+      'h1': 'h1',
+      'h2': 'h2',
+      'h3': 'h3',
+      'span': 'span',
+      'p': 'p'
+    }
+
+  #{typeTag[type]}&attributes(attrs)= text

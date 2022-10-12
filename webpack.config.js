@@ -7,6 +7,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+const ESLint = require('eslint-webpack-plugin')
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
@@ -141,9 +142,9 @@ const jsLoaders = () => {
     },
   ];
 
-  if (isDev) {
-    loaders.push('eslint-loader');
-  }
+  // if (isDev) {
+  //   loaders.push();
+  // }
 
   return loaders;
 };
@@ -165,14 +166,14 @@ const plugins = () => {
     new MiniCssExtractPlugin({
       filename: `${PATHS.assets}css/${filename('css')}`,
     }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: `${PATHS.src}/static`,
-          to: `${PATHS.dist}/static`,
-        },
-      ],
-    }),
+    // new CopyWebpackPlugin({
+    //   patterns: [
+    //     {
+    //       from: `${PATHS.src}/static`,
+    //       to: `${PATHS.dist}/static`,
+    //     },
+    //   ],
+    // }),
   ];
 
   return base;
@@ -203,8 +204,12 @@ module.exports = {
     compress: true,
     port: 8081,
     hot: isDev,
-    watchContentBase: true,
-    index: 'start-page.html',
+    open: {
+      target: ['main-page.html'],
+      app: {
+        name: 'firefox',
+      },
+    },
   },
   devtool: isDev ? 'source-map' : false,
   plugins: plugins(),

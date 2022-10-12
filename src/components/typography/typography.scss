@@ -1,0 +1,54 @@
+@import '~/scss/variables';
+
+.typography {
+  &--type-h1 {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  &--type-h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  &--type-h3 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  &--type-h4 {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  &--lead {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  &--large {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  &--additional {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &--bold {
+    font-weight: 700;
+  }
+
+  &--medium {
+    font-weight: 500;
+  }
+
+  &--color-primary {
+    color: $primaryColor;
+  }
+
+  &--color-secondary {
+    color: $secondaryColor;
+  }
+}

@@ -1,0 +1,8 @@
+@import '~/scss/variables';
+
+html {
+  font-family: $mainFont;
+  font-size: $mainFontSize;
+  line-height: $mainLineHeight;
+  color: $primaryColor;
+}

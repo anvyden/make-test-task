@@ -1,0 +1,13 @@
+.logo {
+  display: flex;
+  width: 40px;
+  height: 40px;
+
+  &__link {
+    display: flex;
+  }
+
+  &__img {
+    width: 100%;    
+  }
+}
