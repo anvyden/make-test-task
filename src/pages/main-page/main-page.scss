@@ -1,12 +1,43 @@
 @import '~/layouts/main-layout/main-layout';
+@import '~/scss/variables';
 
 .main-page {
   display: grid;
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: repeat($desktopColumns, 1fr);
   column-gap: 32px;
   padding-top: 48px;
 
+  @media screen and (max-width: $tabletWidth) {
+    grid-template-columns: repeat($tabletColumns, 1fr);
+  }
+
+  @media screen and (max-width: $mobileWidth) {
+    grid-template-columns: repeat($mobileColumns, 1fr);
+    column-gap: 24px;
+  }
+
   &__aside {
     padding-top: 168px;
+    grid-column: 1 / calc(($desktopColumns / 4) + 1);
+
+    @media screen and (max-width: $tabletWidth) {
+      grid-column: 1 / calc(($tabletColumns / 4) + 1);
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      grid-column: 1 / calc(($mobileColumns / 4) + 1);
+    }
+  }
+
+  &__content {
+    grid-column: calc(($desktopColumns / 4) + 1) / calc($desktopColumns + 1);
+
+    @media screen and (max-width: $tabletWidth) {
+      grid-column: calc(($tabletColumns / 4) + 1) / calc($tabletColumns + 1);
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      grid-column: calc(($mobileColumns / 4) + 1) / calc($mobileColumns + 1);
+    }
   }
 }

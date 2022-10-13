@@ -1,7 +1,20 @@
 .page-layout {
-  &__container {
+  &__wrapper {
+    display: flex;
+    justify-content: center;
     margin: 0 auto;
-    max-width: 1376px;
-    padding: 32px;
+    padding: 64px;
+  }
+
+  &__container {
+    max-width: 1312px;
+
+    @media screen and (max-width: 1199px) {
+      max-width: 928px;
+    }
+
+    @media screen and (max-width: 735px) {
+      max-width: 424px;
+    }
   }
 }

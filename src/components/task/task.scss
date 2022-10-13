@@ -1,11 +1,53 @@
 @import '~/scss/variables';
 
 .task {
+  display: grid;
+  grid-template-columns: repeat(calc(($desktopColumns / 4) * 3), 1fr);
+  column-gap: 32px;
+
+  @media screen and (max-width: $tabletWidth) {
+    grid-template-columns: repeat(calc(($tabletColumns / 4) * 3), 1fr);
+  }
+
+  @media screen and (max-width: $mobileWidth) {
+    grid-template-columns: repeat(calc(($mobileColumns / 4) * 3), 1fr);
+  }
+
   &__title {
+    grid-column: 1 / calc((($desktopColumns / 4) * 2) + 1);
     margin-bottom: 16px;
+
+    @media screen and (max-width: $tabletWidth) {
+      grid-column: 1 / calc((($tabletColumns / 4) * 2) + 1);
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      grid-column: 1 / calc((($mobileColumns / 4) * 2) + 1);
+    }
   }
 
   &__level {
+    grid-column: 1 / calc((($desktopColumns / 4) * 2) + 1);
     margin-bottom: 64px;
+
+    @media screen and (max-width: $tabletWidth) {
+      grid-column: 1 / calc((($tabletColumns / 4) * 2) + 1);
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      grid-column: 1 / calc((($mobileColumns / 4) * 2) + 1);
+    }
+  }
+
+  &__description {
+    grid-column: 1 / calc((($desktopColumns / 4) * 2) + 1);
+
+    @media screen and (max-width: $tabletWidth) {
+      grid-column: 1 / calc((($tabletColumns / 4) * 2) + 1);
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      grid-column: 1 / calc((($mobileColumns / 4) * 2) + 1);
+    }
   }
 }
