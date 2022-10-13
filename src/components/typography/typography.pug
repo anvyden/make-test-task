@@ -1,0 +1,43 @@
+include ~/components/text/text
+include ~/components/bar/bar
+
+mixin typography({ title, description } = {}, fonts = [])
+  section.typography
+    .typography__title
+      +text({
+        text: title,
+        type: 'h2',
+        color: 'primary',
+        weight: 'bold'
+      })
+    .typography__description
+      +text({
+        text: description,
+        type: 'p',
+        color: 'primary'
+      })
+    .typography__bar
+      +bar([
+        { text: 'Десктоп' },
+        { text: 'Телефон' }
+      ])
+    ul.typography__list
+      each font in fonts
+        li.typography__item 
+          .typography__item-description
+            +text({
+              text: font.description,
+              type: 'p',
+              modifier: 'additional',
+              color: 'secondary',
+            })
+          .typography__item-value
+            +text({
+              text: font.text,
+              type: font.type,
+              modifier: font.modifier,
+              color: 'primary',
+              weight: font.weight
+            })
+
+  

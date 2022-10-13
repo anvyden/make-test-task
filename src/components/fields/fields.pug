@@ -1,0 +1,33 @@
+include ~/components/text-field/text-field
+
+mixin fields()
+  .fields
+    +text-field({
+      type: 'email',
+      placeholder: 'E-mail',
+      name: 'email'
+    })
+    +text-field({
+      type: 'email',
+      state: 'Ховер',
+      placeholder: 'E-mail',
+      name: 'email',
+      hovered: true
+    })
+    +text-field({
+      type: 'email',
+      state: 'Ввод',
+      prompt: 'E-mail',
+      placeholder: 'E-mail',
+      name: 'email',
+      focused: true
+    })
+    +text-field({
+      type: 'email',
+      state: 'Ошибка',
+      prompt: 'E-mail',
+      error: 'Текст ошибки',
+      placeholder: 'E-mail',
+      name: 'email',
+      invalid: true
+    })

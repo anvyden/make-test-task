@@ -1,0 +1,84 @@
+@import '~/scss/variables';
+
+.text-field {
+  position: relative;
+
+  &__state {
+    position: absolute;
+    left: 0;
+    top: -40px;
+    transform: translateY(-100%);
+  }
+
+  &__prompt {
+    position: absolute;
+    left: 0;
+    top: -4px;
+    transform: translateY(-100%);
+    font-size: 12px;
+    line-height: 20px;
+    color: $secondaryColor;
+
+    &--error {
+      color: $errorColor;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__input {
+    width: 100%;
+    padding-bottom: 6px;
+    border: none;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 24px;
+    outline: none;
+
+    &:hover,
+    &--hovered {
+      + .text-field {
+        &__border {
+          background-color: $activeColor;
+        }
+      }
+    }
+
+    &:focus-visible,
+    &--focused {
+      + .text-field {
+        &__border {
+          height: 4px;
+          background-color: $activeColor;
+        }
+      }
+    }
+
+    &--invalid {
+      + .text-field {
+        &__border {
+          height: 4px;
+          background-color: $errorColor;
+        }
+      }
+    }
+  }
+
+  &__border {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $inputBorder;
+    content: '';
+  }
+
+  &__error {
+    position: absolute;
+    bottom: -6px;
+    transform: translateY(100%);
+  }
+}

@@ -1,0 +1,21 @@
+include ~/components/text/text
+include ~/components/fields/fields
+
+mixin UI({ title, fieldsTitle } = {})
+  .ui
+    .ui__title
+      +text({
+        text: title,
+        type: 'h2',
+        color: 'primary',
+        weight: 'bold'
+      })
+    .ui__fields-title
+      +text({
+        text: fieldsTitle,
+        type: 'h3',
+        color: 'primary',
+        weight: 'medium'
+      })
+    .ui__fields
+      +fields

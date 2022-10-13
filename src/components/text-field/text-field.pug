@@ -1,0 +1,65 @@
+include ~/components/text/text
+
+mixin text-field(options = {})
+  -
+    const {
+      type,
+      placeholder,
+      name,
+      state,
+      prompt,
+      error,
+      value,
+      dataType,
+      withSpellcheck,
+      hovered,
+      focused,
+      invalid,
+      autocomplete='off',
+      classForJs
+    } = options
+
+    const mainClass = 'text-field__input'
+    const hoveredModifier = hovered && 'text-field__input--hovered'
+    const focusedModifier = focused && 'text-field__input--focused'
+    const invalidModifier = invalid && 'text-field__input--invalid'
+    const errorPromptModifier = error && 'text-field__prompt--error'
+
+    const attrs = {
+      class: [
+        mainClass,
+        hoveredModifier,
+        focusedModifier,
+        invalidModifier
+      ],
+      type: type,
+      name: name,
+      value: value,
+      placeholder: placeholder,
+      autocomplete: autocomplete,
+      spellcheck: withSpellCheck,
+      'data-type': dataType
+    }
+
+  .text-field
+    if (state)
+      .text-field__state
+        +text({
+          text: state,
+          type: 'p',
+          modifier: 'additional',
+          color: 'secondary'
+        })
+    if (prompt)
+      .text-field__prompt(class=errorPromptModifier)=prompt
+    .text-field__wrapper
+      input&attributes(attrs)
+      .text-field__border
+    if (error)
+      .text-field__error
+        +text({
+          text: error,
+          type: 'p',
+          modifier: 'additional',
+          color: 'error'
+        })

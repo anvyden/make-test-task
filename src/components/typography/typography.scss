@@ -1,0 +1,85 @@
+@import '~/scss/variables';
+
+.typography {
+  display: grid;
+  grid-template-columns: repeat(calc(($desktopColumns / 4) * 3), 1fr);
+  column-gap: $gutter;
+
+  @media screen and (max-width: $tabletWidth) {
+    grid-template-columns: repeat(calc(($tabletColumns / 4) * 3), 1fr);
+  }
+
+  @media screen and (max-width: $mobileWidth) {
+    grid-template-columns: repeat($mobileColumns, 1fr);
+    column-gap: $mobileGutter;
+  }
+
+  &__title {
+    grid-column: 1 / calc((($desktopColumns / 4) * 2) + 1);
+    margin-bottom: calc($gutter * 0.75);
+
+    @media screen and (max-width: $tabletWidth) {
+      grid-column: 1 / calc(($tabletColumns / 4) * 3);
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      grid-column: 1 / calc((($mobileColumns / 4) * 3) + 1);
+      margin-bottom: calc($mobileGutter * 0.75);
+    }
+  }
+  
+  &__description {
+    grid-column: 1 / calc((($desktopColumns / 4) * 2) + 1);
+    margin-bottom: calc($gutter * 1.5);
+
+    @media screen and (max-width: $tabletWidth) {
+      grid-column: 1 / calc(($tabletColumns / 4) * 3);
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      grid-column: 1 / calc($mobileColumns + 1);
+      margin-bottom: calc($mobileGutter * 1.5);
+    }
+  }
+
+  &__bar {
+    grid-column: 1 / calc((($desktopColumns / 4) * 3) + 1);
+    margin-bottom: calc($gutter * 1.5);
+
+    @media screen and (max-width: $tabletWidth) {
+      grid-column: 1 / calc((($tabletColumns / 4) * 3) + 1);
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      grid-column: 1 / calc($mobileColumns + 1);
+      margin-bottom: calc($mobileGutter * 1.5);
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-column: 1 / calc((($desktopColumns / 4) * 3) + 1);
+    row-gap: calc($gutter * 1.5);
+    list-style-type: none;
+
+    @media screen and (max-width: $tabletWidth) {
+      grid-column: 1 / calc((($tabletColumns / 4) * 3) + 1);
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      grid-column: 1 / calc($mobileColumns + 1);
+      row-gap: calc($mobileGutter * 1.5);
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: $gutter;
+
+    @media screen and (max-width: $mobileWidth) {
+      grid-template-columns: 1fr 3fr;
+      column-gap: $mobileGutter;
+    }
+  }
+}
