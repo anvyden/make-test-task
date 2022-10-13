@@ -1,0 +1,42 @@
+include ~/components/task/task
+include ~/components/grid/grid
+
+mixin main-content()
+  main.main-content
+    .main-content__task
+      +task({
+        title: 'Тестовое задание',
+        subtitle: 'Уровень: junior',
+        description: 'Привет! Твоё тестовое задание — грамотно заверстать эту прекрасную страничку. В шапке страницы укажи своё ФИО, так всем будет удобнее. В менюхе под иконкой бургером мы хотели бы также видеть твои данные. Ну что, поехали?'
+      })
+    .main-content__grid 
+      +grid({
+        title: 'Сетка',
+        description: 'Задание предполагает адаптивную вёрстку. Используется 3 состояния в зависимости от устройства. Сетка «резиновая» — переменной ширины.'
+      },
+      [
+        {
+          title: 'Десктоп (1200+)',
+          contentWidth: '1072-1312',
+          columns: '12',
+          columnWidth: '60-80',
+          gutter: '32',
+          image: 'desktop.jpg'
+        },
+        {
+          title: 'Планшет (736+)',
+          contentWidth: '672-928',
+          columns: '8',
+          columnWidth: '56-88',
+          gutter: '32',
+          image: 'tablet.jpg'
+        },
+        {
+          title: 'Телефон (320+)',
+          contentWidth: '296-424',
+          columns: '4',
+          columnWidth: '56-88',
+          gutter: '24',
+          image: 'mobile.jpg'
+        },
+      ])

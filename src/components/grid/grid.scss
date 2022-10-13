@@ -1,6 +1,6 @@
 @import '~/scss/variables';
 
-.task {
+.grid {
   display: grid;
   grid-template-columns: repeat(calc(($desktopColumns / 4) * 3), 1fr);
   column-gap: $gutter;
@@ -16,7 +16,7 @@
 
   &__title {
     grid-column: 1 / calc((($desktopColumns / 4) * 2) + 1);
-    margin-bottom: calc($gutter / 2);
+    margin-bottom: calc($gutter * 0.75);
 
     @media screen and (max-width: $tabletWidth) {
       grid-column: 1 / calc((($tabletColumns / 4) * 3) + 1);
@@ -24,26 +24,12 @@
 
     @media screen and (max-width: $mobileWidth) {
       grid-column: 1 / calc((($mobileColumns / 4) * 3) + 1);
-      margin-bottom: calc($mobileGutter / 2);
-    }
-  }
-
-  &__level {
-    grid-column: 1 / calc((($desktopColumns / 4) * 2) + 1);
-    margin-bottom: calc($gutter * 2);
-
-    @media screen and (max-width: $tabletWidth) {
-      grid-column: 1 / calc((($tabletColumns / 4) * 3) + 1);
-    }
-
-    @media screen and (max-width: $mobileWidth) {
-      grid-column: 1 / calc((($mobileColumns / 4) * 3) + 1);
-      margin-bottom: calc($mobileGutter * 2);
     }
   }
 
   &__description {
     grid-column: 1 / calc((($desktopColumns / 4) * 2) + 1);
+    margin-bottom: calc($gutter * 1.5);
 
     @media screen and (max-width: $tabletWidth) {
       grid-column: 1 / calc((($tabletColumns / 4) * 3) + 1);
@@ -51,6 +37,22 @@
 
     @media screen and (max-width: $mobileWidth) {
       grid-column: 1 / calc($mobileColumns + 1);
+      margin-bottom: calc($mobileGutter * 1.5);
+    }
+  }
+
+  &__screen {
+    grid-column: 1 / calc($desktopColumns + 1);
+    display: grid;
+    row-gap: calc($gutter * 2);
+
+    @media screen and (max-width: $tabletWidth) {
+      grid-column: 1 / calc((($tabletColumns / 4) * 3) + 1);
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      grid-column: 1 / calc($mobileColumns + 1);
+      row-gap: calc($mobileGutter * 2);
     }
   }
 }

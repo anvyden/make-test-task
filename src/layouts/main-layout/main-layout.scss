@@ -1,9 +1,15 @@
+@import '~/scss/variables';
+
 .page-layout {
   &__wrapper {
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    padding: 64px;
+    padding: $gutter;
+
+    @media screen and (max-width: $mobileWidth) {
+      padding: $mobileGutter calc($mobileGutter / 2);
+    }
   }
 
   &__container {

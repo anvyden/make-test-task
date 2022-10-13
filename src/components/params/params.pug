@@ -1,0 +1,14 @@
+mixin params({contentWidth, columns, columnWidth, gutter} = {})
+  ul.params
+    li.params__item
+      p.params__item-title='Контент'
+      p.params__item-value=contentWidth
+    li.params__item
+      p.params__item-title='Колонок'
+      p.params__item-value=columns
+    li.params__item
+      p.params__item-title='Ширина колонок'
+      p.params__item-value=columnWidth
+    li.params__item
+      p.params__item-title='Межколонник'
+      p.params__item-value=gutter

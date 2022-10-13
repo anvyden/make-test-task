@@ -8,7 +8,11 @@
   }
 
   &__item {
-    margin-bottom: 16px;
+    margin-bottom: calc($gutter / 2);
+
+    @media screen and (max-width: $mobileWidth) {
+      margin-bottom: calc($mobileGutter / 2);
+    }
 
     &:last-child {
       margin-bottom: 0;

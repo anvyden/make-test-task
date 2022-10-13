@@ -1,0 +1,21 @@
+include ~/components/text/text
+include ~/components/params/params
+
+mixin screen({ title, contentWidth, columns, columnWidth, gutter, image } = {})
+  .screen
+    .screen__title 
+      +text({
+        text: title,
+        type: 'h3',
+        color: 'primary',
+        weight: 'medium'
+      })
+    .screen__params
+      +params({
+        contentWidth,
+        columns,
+        columnWidth,
+        gutter
+      })
+    .screen__picture 
+      img.screen__img(src=require(`@pages/main-page/img/${image}`))

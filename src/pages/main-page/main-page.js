@@ -1,6 +1,6 @@
 import '~/main';
 import '~/components/header';
 import '~/components/aside';
-import '~/components/task';
+import '~/components/main-content';
 
 import './main-page.scss';

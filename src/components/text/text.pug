@@ -1,4 +1,4 @@
-mixin typography(options = {})
+mixin text(options = {})
   - 
     const {
       text,
@@ -14,11 +14,11 @@ mixin typography(options = {})
     const colors = ['primary', 'secondary']
     const weights = ['bold', 'medium']
 
-    const mainClass = 'typography'
-    const typeModifier = types.includes(type) && `typography--type-${type}`
-    const fontModifier = !types.includes(type) && modifiers.includes(modifier) && `typography--${modifier}`
-    const colorModifier = colors.includes(color) && `typography--color-${color}`
-    const weightModifier = weights.includes(weight) && `typography--${weight}`
+    const mainClass = 'text'
+    const typeModifier = types.includes(type) && `text--type-${type}`
+    const fontModifier = !types.includes(type) && modifiers.includes(modifier) && `text--${modifier}`
+    const colorModifier = colors.includes(color) && `text--color-${color}`
+    const weightModifier = weights.includes(weight) && `text--${weight}`
     const upperModifier = hasUpper && 'text--upper'
 
     const attrs = {

@@ -1,23 +1,23 @@
-include ~/components/typography/typography
+include ~/components/text/text
 
 mixin task({ title, subtitle, description } = {})
   .task
     .task__title
-      +typography({
+      +text({
         text: title,
         type: 'h1',
         color: 'primary',
         weight: 'bold'
       })
     .task__level
-      +typography({
+      +text({
         text: subtitle,
         type: 'p',
         modifier: 'lead',
         color: 'primary'
       })
     .task__description
-      +typography({
+      +text({
         text: description,
         type: 'p',
         color: 'primary'

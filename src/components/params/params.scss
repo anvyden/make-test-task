@@ -1,0 +1,33 @@
+@import '~/scss/variables';
+
+.params {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: $gutter;
+  list-style-type: none;
+
+  @media screen and (max-width: $tabletWidth) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $gutter;
+  }
+
+  @media screen and (max-width: $mobileWidth) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $mobileGutter;
+  }
+
+  &__item {
+    &-title {
+      font-size: 14px;
+      line-height: 20px;
+      color: $secondaryColor;
+      margin-bottom: calc($gutter / 4);
+    }
+
+    &-value {
+      font-size: 24px;
+      line-height: 32px;
+      color: $primaryColor;
+    }
+  }
+}

@@ -1,4 +1,4 @@
 import '~/components/logo';
-import '~/components/typography';
+import '~/components/text';
 
 import './header.scss';

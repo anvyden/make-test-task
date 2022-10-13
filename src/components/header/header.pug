@@ -1,5 +1,5 @@
 include ~/components/logo/logo
-include ~/components/typography/typography
+include ~/components/text/text
 
 mixin header()
   .header
@@ -8,7 +8,7 @@ mixin header()
         +logo
       .header__person 
         .header__person-surname 
-          +typography({
+          +text({
             text: 'Наркевич',
             type: 'p',
             modifier: 'additional',
@@ -16,7 +16,7 @@ mixin header()
             color: 'primary'
           })
         .header__person-name
-          +typography({
+          +text({
             text: 'Денис Владимирович',
             type: 'p',
             modifier: 'additional',

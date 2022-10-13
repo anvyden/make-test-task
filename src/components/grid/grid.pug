@@ -1,0 +1,21 @@
+include ~/components/text/text
+include ~/components/screen/screen
+
+mixin grid( { title, description }, screens = [])
+  .grid
+    .grid__title
+      +text({
+        text: title,
+        type: 'h2',
+        color: 'primary',
+        weight: 'bold'
+      })
+    .grid__description
+      +text({
+        text: description,
+        type: 'p',
+        color: 'primary',
+      })
+    .grid__screen
+      each screen in screens 
+        +screen(screen)

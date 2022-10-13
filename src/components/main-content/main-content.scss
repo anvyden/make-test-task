@@ -1,0 +1,10 @@
+@import '~/scss/variables';
+
+.main-content {
+  display: grid;
+  row-gap: calc($gutter * 2.5);
+
+  @media screen and (max-width: $mobileWidth) {
+    row-gap: calc($mobileGutter * 2.5);
+  }
+}

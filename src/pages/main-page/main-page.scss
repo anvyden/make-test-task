@@ -4,8 +4,8 @@
 .main-page {
   display: grid;
   grid-template-columns: repeat($desktopColumns, 1fr);
-  column-gap: 32px;
-  padding-top: 48px;
+  column-gap: $gutter;
+  padding-top: calc($gutter * 1.5);
 
   @media screen and (max-width: $tabletWidth) {
     grid-template-columns: repeat($tabletColumns, 1fr);
@@ -13,19 +13,20 @@
 
   @media screen and (max-width: $mobileWidth) {
     grid-template-columns: repeat($mobileColumns, 1fr);
-    column-gap: 24px;
+    column-gap: $mobileGutter;
+    padding-top: calc($mobileGutter * 1.5);
   }
 
   &__aside {
-    padding-top: 168px;
     grid-column: 1 / calc(($desktopColumns / 4) + 1);
+    padding-top: calc($gutter * 5.25);
 
     @media screen and (max-width: $tabletWidth) {
       grid-column: 1 / calc(($tabletColumns / 4) + 1);
     }
 
     @media screen and (max-width: $mobileWidth) {
-      grid-column: 1 / calc(($mobileColumns / 4) + 1);
+      display: none;
     }
   }
 
@@ -37,7 +38,16 @@
     }
 
     @media screen and (max-width: $mobileWidth) {
-      grid-column: calc(($mobileColumns / 4) + 1) / calc($mobileColumns + 1);
+      grid-column: 1 / calc($mobileColumns + 1);
     }
   }
+
+  // &__task {
+  //   margin-bottom: calc($gutter * 2.5);
+
+  //   @media screen and (max-width: $mobileWidth) {
+  //     // grid-column: 1 / calc(($mobileColumns / 4) + 1);
+  //     margin-bottom: calc($mobileGutter * 2.5);
+  //   }
+  // }
 }
