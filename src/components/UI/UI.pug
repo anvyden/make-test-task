@@ -1,7 +1,20 @@
 include ~/components/text/text
 include ~/components/fields/fields
+include ~/components/selects/selects
+include ~/components/buttons/buttons
+include ~/components/controls/controls
 
-mixin UI({ title, fieldsTitle } = {})
+mixin UI(options = {})
+  -
+    const {
+      title,
+      fieldsTitle,
+      selectsTitle,
+      selectsDescription,
+      buttonsTitle,
+      controlsTitle
+    } = options
+  
   .ui
     .ui__title
       +text({
@@ -10,7 +23,7 @@ mixin UI({ title, fieldsTitle } = {})
         color: 'primary',
         weight: 'bold'
       })
-    .ui__fields-title
+    .ui__title-fields
       +text({
         text: fieldsTitle,
         type: 'h3',
@@ -19,3 +32,36 @@ mixin UI({ title, fieldsTitle } = {})
       })
     .ui__fields
       +fields
+    .ui__title-selects
+      +text({
+        text: selectsTitle,
+        type: 'h3',
+        color: 'primary',
+        weight: 'medium'
+      })
+    .ui__description-selects
+      +text({
+        text: selectsDescription,
+        type: 'p',
+        color: 'primary'
+      })
+    .ui__selects 
+      +selects
+    .ui__title-buttons 
+      +text({
+        text: buttonsTitle,
+        type: 'h3',
+        color: 'primary',
+        weight: 'medium'
+      })
+    .ui__buttons 
+      +buttons
+    .ui__title-controls
+      +text({
+        text: controlsTitle,
+        type: 'h3',
+        color: 'primary',
+        weight: 'medium'
+      })
+    .ui__controls
+      +controls

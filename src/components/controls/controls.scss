@@ -1,0 +1,31 @@
+@import '~/scss/variables';
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  column-gap: $gutter;
+  row-gap: calc($gutter * 1.5);
+
+  @media screen and (max-width: $tabletWidth) {
+    grid-template-columns: 1fr;
+  }
+
+  @media screen and (max-width: $mobileWidth) {
+    grid-template-columns: 1fr;
+    column-gap: $mobileGutter;
+    row-gap: calc($mobileGutter * 1.5);
+  }
+
+  &__checkboxs {
+    display: grid;
+    row-gap: 24px;
+    list-style-type: none;
+  }
+
+  &__radio-buttons {
+    display: grid;
+    row-gap: 24px;
+    list-style-type: none;
+  }
+}

@@ -3,6 +3,7 @@ include ~/components/grid/grid
 include ~/components/typography/typography
 include ~/components/UI/UI
 
+
 mixin main-content()
   main.main-content
     .main-content__task
@@ -99,5 +100,9 @@ mixin main-content()
     .main-content__UI
       +UI({
         title: 'UI',
-        fieldsTitle: 'Текстовое поле'
+        fieldsTitle: 'Текстовое поле',
+        selectsTitle: 'Выпадающий список',
+        selectsDescription: 'Компонент состоит из текстового поля и выпадающей подсказки',
+        buttonsTitle: 'Кнопка',
+        controlsTitle: 'Чекбокс, радиобаттон'
       })

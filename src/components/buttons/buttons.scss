@@ -1,0 +1,29 @@
+@import '~/scss/variables';
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: end;
+  column-gap: $gutter;
+  row-gap: calc($gutter * 3.375);
+
+  @media screen and (max-width: $tabletWidth) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (max-width: $mobileWidth) {
+    column-gap: $mobileGutter;
+    row-gap: calc($mobileGutter * 3.375);
+  }
+
+  &__item {
+    position: relative;
+
+    &-state {
+      position: absolute;
+      left: 0;
+      top: -24px;
+      transform: translateY(-100%);
+    }
+  }
+}

@@ -1,0 +1,13 @@
+mixin checkbox({ text, name, isChecked, hovered } = {})
+  -
+    const hoverModifier = hovered && 'checkbox__label--hovered'
+
+  .checkbox
+    label.checkbox__label(class=hoverModifier)
+      input(
+        class='checkbox__input'
+        type='checkbox'
+        name=name
+        checked=isChecked
+      )
+      span.checkbox__text=text

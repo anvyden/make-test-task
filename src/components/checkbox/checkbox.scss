@@ -1,0 +1,71 @@
+@import '~/scss/variables';
+
+.checkbox {
+  &__text {
+    display: inline-block;
+    mix-blend-mode: normal;
+    opacity: 0.8;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: -16px;
+      width: 24px;
+      height: 24px;
+      transform: translateX(-100%);
+      border: 2px solid $inputBorder;
+      background-color: $white;
+      content: '';
+    }
+  }
+
+  &__label {
+    position: relative;
+    display: inline-block;
+    margin-left: 40px;
+    cursor: pointer;
+
+    &:hover,
+    &--hovered {
+      .checkbox {
+        &__text {
+          opacity: 1;
+
+          &::before {
+            border-color: $activeColor;
+          }
+        }
+      }
+    }
+  }
+
+  &__input {
+    position: absolute;
+    outline: none;
+    appearance: none;
+
+    &:checked + .checkbox {
+      &__text {
+        opacity: 1;
+
+        &::before {
+          background: url('~/components/checkbox/img/checked.svg') no-repeat
+            center $activeColor;
+          border-color: $activeColor;
+        }
+      }
+    }
+
+    &:focus-visible {
+      + .checkbox {
+        &__text {
+          opacity: 1;
+
+          &::before {
+            border-color: $activeColor;
+          }
+        }
+      }
+    }
+  }
+}

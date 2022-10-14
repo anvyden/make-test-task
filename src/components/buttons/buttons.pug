@@ -1,0 +1,49 @@
+include ~/components/text/text
+include ~/components/button/button
+
+mixin buttons()
+  .buttons
+    .buttons__item
+      +button({
+        text: 'Отправить',
+        type: 'button'
+      })
+    .buttons__item
+      .buttons__item-state
+        +text({
+          text: 'Ховер',
+          type: 'p',
+          modifier: 'additional',
+          color: 'secondary'
+        })
+      +button({
+        text: 'Отправить',
+        type: 'button',
+        hovered: true
+      })
+    .buttons__item
+      .buttons__item-state
+        +text({
+          text: 'Нажатие',
+          type: 'p',
+          modifier: 'additional',
+          color: 'secondary'
+        })
+      +button({
+        text: 'Отправить',
+        type: 'button',
+        clicked: true
+      })
+    .buttons__item
+      .buttons__item-state 
+        +text({
+          text: 'Неактивна',
+          type: 'p',
+          modifier: 'additional',
+          color: 'secondary'
+        })
+      +button({
+        text: 'Отправить',
+        type: 'button',
+        disabled: true
+      })

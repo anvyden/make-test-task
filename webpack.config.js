@@ -207,7 +207,7 @@ module.exports = {
     open: {
       target: ['main-page.html'],
       app: {
-        name: 'firefox',
+        name: 'chrome',
       },
     },
   },

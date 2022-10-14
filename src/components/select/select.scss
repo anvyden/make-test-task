@@ -1,0 +1,156 @@
+@import '~/scss/variables';
+
+.select {
+  position: relative;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__border {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $inputBorder;
+    content: '';
+  }
+
+  &__input {
+    width: 100%;
+    padding-bottom: 6px;
+    border: none;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 24px;
+    outline: none;
+    cursor: pointer;
+
+    &:hover,
+    &--hovered {
+      ~ .select {
+        &__border {
+          background-color: $activeColor;
+        }
+      }
+    }
+
+    &:focus-visible {
+      ~ .select {
+        &__border {
+          height: 4px;
+          background-color: $activeColor;
+        }
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(calc(-50% - 1px));
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      ~ .select {
+        &__border {
+          background-color: $activeColor;
+        }
+      }
+    }
+
+    &:focus-visible {
+      ~ .select {
+        &__border {
+          height: 4px;
+          background-color: $activeColor;
+        }
+      }
+    }
+
+    &-arrow {
+      transition: transform 0.5s;
+    }
+  }
+
+  &__prompt {
+    position: absolute;
+    visibility: hidden;
+    left: 0;
+    top: 0;
+    transform: translateY(0);
+    opacity: 0;
+    font-size: 12px;
+    line-height: 20px;
+    color: $secondaryColor;
+    transition: top 0.5s, transform 0.5s, opacity 0.5s, visibility 0.5s;
+    z-index: 1;
+  }
+
+  &__drop {
+    position: absolute;
+    max-height: 0;
+    visibility: hidden;
+    overflow-y: scroll;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    background: $white;
+    box-shadow: $selectShadow;
+    transition: max-height 0.5s;
+    z-index: 1;
+  }
+
+  &__list {
+    list-style-type: none;
+  }
+
+  &__item {
+    padding: 8px 24px;
+    cursor: pointer;
+    outline: none;
+
+    &:hover,
+    &:focus-visible {
+      color: $white;
+      background-color: $activeColor;
+    }
+
+    &--active {
+      color: $activeColor;
+    }
+  }
+
+  &--opened {
+    .select {
+      &__drop {
+        visibility: visible;
+        max-height: 160px;
+      }
+
+      &__button-arrow {
+        transform: rotate(180deg);
+      }
+
+      &__prompt {
+        visibility: visible;
+        top: -4px;
+        transform: translateY(-100%);
+        opacity: 1;
+      }
+
+      &__border {
+        height: 4px;
+        background-color: $activeColor;
+      }
+    }
+  }
+}

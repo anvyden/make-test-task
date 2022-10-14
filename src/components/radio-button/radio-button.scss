@@ -1,0 +1,87 @@
+@import '~/scss/variables';
+
+.radio-button {
+  &__text {
+    display: inline-block;
+    mix-blend-mode: normal;
+    opacity: 0.8;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: -16px;
+      width: 24px;
+      height: 24px;
+      transform: translateX(-100%);
+      border: 2px solid $inputBorder;
+      border-radius: 50%;
+      background-color: $white;
+      content: '';
+    }
+
+    &::after {
+      position: absolute;
+      top: 6px;
+      left: -22px;
+      display: none;
+      width: 12px;
+      height: 12px;
+      transform: translateX(-100%);
+      background: $activeColor;
+      border-radius: 50%;
+      content: '';
+    }
+  }
+
+  &__label {
+    position: relative;
+    display: inline-block;
+    margin-left: 40px;
+    cursor: pointer;
+
+    &:hover,
+    &--hovered {
+      .radio-button {
+        &__text {
+          opacity: 1;
+
+          &::before {
+            border-color: $activeColor;
+          }
+        }
+      }
+    }
+  }
+
+  &__input {
+    position: absolute;
+    outline: none;
+    appearance: none;
+
+    &:checked + .radio-button {
+      &__text {
+        opacity: 1;
+
+        &::before {
+          border-color: $activeColor;
+        }
+
+        &::after {
+          display: block;
+        }
+      }
+    }
+
+    &:focus-visible {
+      + .radio-button {
+        &__text {
+          opacity: 1;
+
+          &::before {
+            border-color: $activeColor;
+          }
+        }
+      }
+    }
+  }
+}

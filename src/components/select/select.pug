@@ -1,0 +1,66 @@
+mixin select(options = {})
+  -
+    const {
+      type,
+      placeholder,
+      name,
+      state,
+      prompt,
+      value,
+      dataType,
+      hovered,
+      isOpened,
+      hasJsClass,
+      items = []
+    } = options
+
+    const mainClass = 'select'
+    const inputClass = 'select__input js-select__input'
+    const buttonClass = 'select__button'
+    const arrowClass = 'select__button-arrow js-select__button-arrow'
+    const dropClass = 'select__drop js-select__drop'
+    const itemClass = 'select__item js-select__item'
+    const itemNameClass = 'select__item-name'
+
+    const openModifier = isOpened && 'select--opened'
+    const hoverModifier = hovered && 'select__input--hovered'
+    const classForJs = hasJsClass && 'js-select'
+
+  div&attributes({
+    class: [
+      mainClass,
+      classForJs,
+      openModifier
+    ]
+  })
+    if (prompt)
+      .select__prompt.js-select__prompt=prompt
+    .select__wrapper 
+      input&attributes({
+        class: [
+          inputClass,
+          hoverModifier
+        ],
+        type: type,
+        'data-type': 'input',
+        value: value,
+        placeholder: placeholder,
+        name: name,
+        readOnly: true,
+      })
+      button&attributes({
+        class: buttonClass,
+        type: 'button',
+        'data-type': 'button'
+      })
+        img&attributes({
+          class: arrowClass,
+          src: require('~/components/select/img/arrow.svg'),
+          alt: 'button',
+          'data-type': 'button'
+        })
+      .select__border
+      div(class=dropClass)
+        ul.select__list
+          each item in items 
+            li(class=itemClass data-type='item' tabIndex='0')=item.text

@@ -1,0 +1,14 @@
+mixin radio-button({ text, name, value, isChecked, hovered } = {})
+  -
+    const hoverModifier = hovered && 'radio-button__label--hovered'
+
+  .radio-button
+    label.radio-button__label(class=hoverModifier)
+      input&attributes({
+        class: 'radio-button__input',
+        type: 'radio',
+        name: name,
+        value: value,
+        checked: isChecked
+      })
+      span.radio-button__text=text

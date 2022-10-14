@@ -8,9 +8,13 @@ $mainFontWeight: 400;
 $primaryColor: #1b1b1b;
 $secondaryColor: #7d7d7d;
 $activeColor: #3e29e3;
-$typographyBarColor: #cbcbcc;
+$inActiveColor: #cbcbcc;
 $errorColor: #e80f3b;
 $inputBorder: #aeadae;
+$white: #ffffff;
+$buttonGradient: linear-gradient(45deg, #dd80ed 0%, #3d28e3 100%);
+$buttonGradientHover: linear-gradient(225deg, #dd80ed 0%, #3d28e3 100%);
+$buttonGradientClicked: linear-gradient(206.57deg, #dd80ed 0%, #3d28e3 83.33%);
 
 // GRID
 $desktopColumns: 12;
@@ -22,3 +26,6 @@ $mobileGutter: 24px;
 // SCREEN
 $tabletWidth: 1199px;
 $mobileWidth: 735px;
+
+// SHADOWS
+$selectShadow: 0px 8px 16px rgba(0, 0, 0, 0.08);

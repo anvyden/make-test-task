@@ -1,0 +1,41 @@
+mixin button(options = {})
+  -
+    const {
+      text,
+      type,
+      disabled,
+      link,
+      dataType,
+      color,
+      hovered,
+      clicked
+    } = options
+
+    const mainClass = 'button'
+    const buttonTag = link ? 'a' : 'button'
+
+    const hoverModifier = hovered && 'button--hovered'
+    const clickModifier = clicked && 'button--clicked'
+
+    const attrs = {
+      button: {
+        class: [
+          mainClass,
+          hoverModifier,
+          clickModifier
+        ],
+        type: type,
+        disabled: disabled,
+        'data-type': dataType,
+      },
+      a: {
+        class: [
+          mainClass,
+          hoverModifier,
+          clickModifier
+        ],
+        href: link
+      }
+    }
+
+  #{buttonTag}&attributes(attrs[buttonTag])=text
