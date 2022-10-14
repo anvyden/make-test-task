@@ -1,0 +1,10 @@
+mixin accordion({ header, text } = {})
+  .accordion.js-accordion
+    div&attributes({
+      class: 'accordion__header',
+      tabIndex: '0',
+      'data-type': 'header'
+    })=header
+    .accordion__body.js-accordion__body=text
+    .accordion__border
+    

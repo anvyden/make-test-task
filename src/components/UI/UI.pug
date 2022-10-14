@@ -3,6 +3,7 @@ include ~/components/fields/fields
 include ~/components/selects/selects
 include ~/components/buttons/buttons
 include ~/components/controls/controls
+include ~/components/accordions/accordions
 
 mixin UI(options = {})
   -
@@ -12,7 +13,8 @@ mixin UI(options = {})
       selectsTitle,
       selectsDescription,
       buttonsTitle,
-      controlsTitle
+      controlsTitle,
+      accordionTitle
     } = options
   
   .ui
@@ -65,3 +67,12 @@ mixin UI(options = {})
       })
     .ui__controls
       +controls
+    .ui__title-accordion
+      +text({
+        text: accordionTitle,
+        type: 'h3',
+        color: 'primary',
+        weight: 'medium'
+      })
+    .ui__accordions
+      +accordions

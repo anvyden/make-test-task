@@ -153,4 +153,32 @@
       margin-bottom: calc($mobileGutter * 2);
     }
   }
+
+  &__title-accordion {
+    grid-column: 1 / calc((($desktopColumns / 4) * 2) + 1);
+    margin-bottom: $gutter;
+
+    @media screen and (max-width: $tabletWidth) {
+      grid-column: 1 / calc(($tabletColumns / 4) * 3);
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      grid-column: 1 / calc((($mobileColumns / 4) * 3) + 1);
+      margin-bottom: $mobileGutter;
+    }
+  }
+
+  &__accordions {
+    grid-column: 1 / calc((($desktopColumns / 4) * 3) + 1);
+    margin-bottom: calc($gutter * 2);
+
+    @media screen and (max-width: $tabletWidth) {
+      grid-column: 1 / calc((($tabletColumns / 4) * 3) + 1);
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      grid-column: 1 / calc($mobileColumns + 1);
+      margin-bottom: calc($mobileGutter * 2);
+    }
+  }
 }
