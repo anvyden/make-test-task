@@ -2,7 +2,7 @@ include ~/components/text/text
 include ~/components/screen/screen
 
 mixin grid( { title, description }, screens = [])
-  .grid
+  .grid(id='grid')
     .grid__title
       +text({
         text: title,

@@ -11,16 +11,23 @@
   }
 
   &__prompt {
+    visibility: hidden;
     position: absolute;
     left: 0;
-    top: -4px;
-    transform: translateY(-100%);
+    top: 0;
+    transform: translateY(0);
+    opacity: 0;
     font-size: 12px;
     line-height: 20px;
     color: $secondaryColor;
+    transition: top 0.5s, transform 0.5s, opacity 0.5s, visibility 0.5s;
+    z-index: 1;
 
-    &--error {
-      color: $errorColor;
+    &--visible {
+      visibility: visible;
+      top: -4px;
+      transform: translateY(-100%);
+      opacity: 1;
     }
   }
 
@@ -55,15 +62,6 @@
         }
       }
     }
-
-    &--invalid {
-      + .text-field {
-        &__border {
-          height: 4px;
-          background-color: $errorColor;
-        }
-      }
-    }
   }
 
   &__border {
@@ -77,8 +75,26 @@
   }
 
   &__error {
+    visibility: hidden;
     position: absolute;
     bottom: -6px;
     transform: translateY(100%);
+  }
+
+  &--invalid {
+    .text-field {
+      &__prompt {
+        color: $errorColor;
+      }
+
+      &__border {
+        height: 4px;
+        background-color: $errorColor;
+      }
+
+      &__error {
+        visibility: visible;
+      }
+    }
   }
 }

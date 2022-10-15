@@ -8,6 +8,7 @@ mixin text-field(options = {})
       name,
       state,
       prompt,
+      promptVisible,
       error,
       value,
       dataType,
@@ -15,14 +16,16 @@ mixin text-field(options = {})
       hovered,
       focused,
       invalid,
+      hasJsClass,
       autocomplete='off'
     } = options
 
-    const mainClass = 'text-field__input'
+    const mainClass = 'text-field__input js-text-field__input'
     const hoveredModifier = hovered && 'text-field__input--hovered'
     const focusedModifier = focused && 'text-field__input--focused'
-    const invalidModifier = invalid && 'text-field__input--invalid'
-    const errorPromptModifier = error && 'text-field__prompt--error'
+    const invalidModifier = invalid && 'text-field--invalid'
+    const promptVisibleModifier = promptVisible && 'text-field__prompt--visible'
+    const classForJs = hasJsClass && 'js-text-field'
 
     const attrs = {
       class: [
@@ -40,7 +43,7 @@ mixin text-field(options = {})
       'data-type': dataType
     }
 
-  .text-field
+  div(class=['text-field', invalidModifier, classForJs])
     if (state)
       .text-field__state
         +text({
@@ -50,12 +53,18 @@ mixin text-field(options = {})
           color: 'secondary'
         })
     if (prompt)
-      .text-field__prompt(class=errorPromptModifier)=prompt
+      div&attributes({
+        class: [
+          'text-field__prompt',
+          'js-text-field__prompt',
+          promptVisibleModifier
+        ]
+      })=prompt
     .text-field__wrapper
       input&attributes(attrs)
       .text-field__border
     if (error)
-      .text-field__error
+      .text-field__error.js-text-field__error
         +text({
           text: error,
           type: 'p',

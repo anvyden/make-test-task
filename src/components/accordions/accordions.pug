@@ -3,6 +3,7 @@ include ~/components/accordion/accordion
 mixin accordions()
   .accordions
     +accordion({
+      hasJsClass: true,
       header: 'Аккордеон',
       text: `
         Гоpдость полными вагонами золотыми погонами
@@ -14,4 +15,22 @@ mixin accordions()
         Это может наш дрyг
         Это может нам поют свои
       `
+    })
+    +accordion({
+      header: 'Аккордеон',
+      hovered: true
+    })
+    +accordion({
+      header: 'Аккордеон',
+      text: `
+        Гоpдость полными вагонами золотыми погонами
+        С юга дyют молодые вет…\u0085
+        Pазpывая в клочья облака не забыли шлют из далека
+        С дома мама И не последняя любовь
+        А по небy бегyт видишь чьи-то следы
+        Это может быть ты это может быть я
+        Это может наш дрyг
+        Это может нам поют свои
+      `,
+      isOpened: true
     })

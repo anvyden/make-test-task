@@ -2,7 +2,7 @@ include ~/components/text/text
 include ~/components/bar/bar
 
 mixin typography({ title, description } = {}, fonts = [])
-  section.typography
+  section.typography(id='typography')
     .typography__title
       +text({
         text: title,

@@ -1,7 +1,7 @@
 include ~/components/text/text
 
 mixin task({ title, subtitle, description } = {})
-  .task
+  .task(id='task')
     .task__title
       +text({
         text: title,

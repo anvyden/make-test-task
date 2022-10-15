@@ -1,7 +1,21 @@
-mixin accordion({ header, text } = {})
-  .accordion.js-accordion
+mixin accordion({ header, text, hovered, hasJsClass, isOpened } = {})
+  -
+    const hoverModifier = hovered && 'accordion__header--hovered'
+    const classForJs = hasJsClass && 'js-accordion'
+    const openModifier = isOpened && 'accordion--opened'
+
+  div&attributes({
+    class: [
+      'accordion',
+      classForJs,
+      openModifier
+    ]
+  })
     div&attributes({
-      class: 'accordion__header',
+      class: [
+        'accordion__header',
+        hoverModifier
+      ],
       tabIndex: '0',
       'data-type': 'header'
     })=header
