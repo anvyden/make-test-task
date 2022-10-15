@@ -1,7 +1,7 @@
 include ~/components/text/text
-include ~/components/bar/bar
+include ~/components/typography-bar/typography-bar
 
-mixin typography({ title, description } = {}, fonts = [])
+mixin typography({ title, description } = {})
   section.typography(id='typography')
     .typography__title
       +text({
@@ -17,27 +17,76 @@ mixin typography({ title, description } = {}, fonts = [])
         color: 'primary'
       })
     .typography__bar
-      +bar([
-        { text: 'Десктоп' },
-        { text: 'Телефон' }
+      +typography-bar([
+        { text: 'Десктоп', dataScreen: 'desktop' },
+        { text: 'Телефон', dataScreen: 'mobile' }
+      ],
+      [
+        {
+          description: 'Заголовок H1, 48/56, bold',
+          text: 'Текст заголовка',
+          type: 'h1',
+          weight: 'bold'
+        },
+        {
+          description: 'Заголовок H2, 32/40, bold',
+          text: 'Текст заголовка',
+          type: 'h2',
+          weight: 'bold'
+        },
+        {
+          description: 'Заголовок H3, 24/32, medium',
+          text: 'Текст заголовка',
+          type: 'h3',
+          weight: 'medium'
+        },
+        {
+          description: 'Заголовок H4, 18/28, medium',
+          text: 'Текст заголовка',
+          type: 'h4',
+          weight: 'medium'
+        },
+        {
+          description: 'Лид P_Lead, 24/32, regular',
+          text: 'Текст лида',
+          type: 'p',
+          modifier: 'lead'
+        },
+        {
+          description: 'Крупный текст P_18, 18/28, regular',
+          text: 'Крупный текст',
+          type: 'p',
+          modifier: 'large',
+        },
+        {
+          description: 'Основной текст P_16, 16/24, regular',
+          text: 'Основной текст',
+          type: 'p'
+        },
+        {
+          description: 'Вcпомогательный текст P_14, 14/20, regular',
+          text: 'Вспомогательный текст',
+          type: 'p',
+          modifier: 'additional'
+        }
       ])
-    ul.typography__list
-      each font in fonts
-        li.typography__item 
-          .typography__item-description
-            +text({
-              text: font.description,
-              type: 'p',
-              modifier: 'additional',
-              color: 'secondary',
-            })
-          .typography__item-value
-            +text({
-              text: font.text,
-              type: font.type,
-              modifier: font.modifier,
-              color: 'primary',
-              weight: font.weight
-            })
+    //- ul.typography__list
+    //-   each font in fonts
+    //-     li.typography__item 
+    //-       .typography__item-description
+    //-         +text({
+    //-           text: font.description,
+    //-           type: 'p',
+    //-           modifier: 'additional',
+    //-           color: 'secondary',
+    //-         })
+    //-       .typography__item-value
+    //-         +text({
+    //-           text: font.text,
+    //-           type: font.type,
+    //-           modifier: font.modifier,
+    //-           color: 'primary',
+    //-           weight: font.weight
+    //-         })
 
   

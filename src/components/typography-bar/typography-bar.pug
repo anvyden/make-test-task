@@ -1,0 +1,28 @@
+mixin typography-bar(buttons = [], items = [])
+  .typography-bar.js-typography-bar
+    .typography-bar__bar
+      each button in buttons
+        button&attributes({
+          class: 'typography-bar__button',
+          'data-screen': button.dataScreen,
+          'data-type': 'button'
+        })=button.text
+    .typography-bar__content
+      ul.typography-bar__content-list.js-typography-bar__content-list
+        each item in items
+          li.typography-bar__content-item.js-typography-bar__content-item
+            .typography-bar__content-item-description
+              +text({
+                text: item.description,
+                type: 'p',
+                modifier: 'additional',
+                color: 'secondary',
+              })
+            .typography-bar__content-item-value
+              +text({
+                text: item.text,
+                type: item.type,
+                modifier: item.modifier,
+                color: 'primary',
+                weight: item.weight
+              })

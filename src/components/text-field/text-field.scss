@@ -85,6 +85,7 @@
     .text-field {
       &__prompt {
         color: $errorColor;
+        animation: shaking 0.5s ease;
       }
 
       &__border {
@@ -94,7 +95,30 @@
 
       &__error {
         visibility: visible;
+        animation: shaking 0.5s ease;
       }
+    }
+  }
+
+  @keyframes shaking {
+    0% {
+      left: -10px;
+    }
+
+    25% {
+      left: 10px;
+    }
+
+    50% {
+      left: -5px;
+    }
+
+    75% {
+      left: 5px;
+    }
+
+    100% {
+      left: 0px;
     }
   }
 }

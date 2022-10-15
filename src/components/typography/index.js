@@ -1,3 +1,3 @@
-import '~/components/bar';
+import '~/components/typography-bar';
 
 import './typography.scss';
