@@ -1,49 +1,57 @@
 include ~/components/text/text
 include ~/components/button/button
 
-mixin buttons()
+mixin buttons({ title } = {})
   .buttons
-    .buttons__item
-      +button({
-        text: 'Отправить',
-        type: 'button'
+    .buttons__title
+      +text({
+        text: title,
+        type: 'h3',
+        color: 'primary',
+        weight: 'medium'
       })
-    .buttons__item
-      .buttons__item-state
-        +text({
-          text: 'Ховер',
-          type: 'p',
-          modifier: 'additional',
-          color: 'secondary'
+    .buttons__buttons
+      .buttons__item
+        +button({
+          text: 'Отправить',
+          type: 'button'
         })
-      +button({
-        text: 'Отправить',
-        type: 'button',
-        hovered: true
-      })
-    .buttons__item
-      .buttons__item-state
-        +text({
-          text: 'Нажатие',
-          type: 'p',
-          modifier: 'additional',
-          color: 'secondary'
+      .buttons__item
+        .buttons__item-state
+          +text({
+            text: 'Ховер',
+            type: 'p',
+            modifier: 'additional',
+            color: 'secondary'
+          })
+        +button({
+          text: 'Отправить',
+          type: 'button',
+          hovered: true
         })
-      +button({
-        text: 'Отправить',
-        type: 'button',
-        clicked: true
-      })
-    .buttons__item
-      .buttons__item-state 
-        +text({
-          text: 'Неактивна',
-          type: 'p',
-          modifier: 'additional',
-          color: 'secondary'
+      .buttons__item
+        .buttons__item-state
+          +text({
+            text: 'Нажатие',
+            type: 'p',
+            modifier: 'additional',
+            color: 'secondary'
+          })
+        +button({
+          text: 'Отправить',
+          type: 'button',
+          clicked: true
         })
-      +button({
-        text: 'Отправить',
-        type: 'button',
-        disabled: true
-      })
+      .buttons__item
+        .buttons__item-state 
+          +text({
+            text: 'Неактивна',
+            type: 'p',
+            modifier: 'additional',
+            color: 'secondary'
+          })
+        +button({
+          text: 'Отправить',
+          type: 'button',
+          disabled: true
+        })

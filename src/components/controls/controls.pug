@@ -1,44 +1,53 @@
+include ~/components/text/text
 include ~/components/checkbox/checkbox
 include ~/components/radio-button/radio-button
 
-mixin controls()
+mixin controls({ title } = {})
   .controls
-    ul.controls__checkboxs
-      li.controls__checkboxs-item
-        +checkbox({
-          text: 'Выбери меня',
-          name: 'choose-me'
-        })
-      li.controls__checkboxs-item
-        +checkbox({
-          text: 'Выбери меня',
-          name: 'choose-me',
-          hovered: true
-        })
-      li.controls__checkboxs-item
-        +checkbox({
-          text: 'Птица счастья завтрашнего дня',
-          name: 'choose-me',
-          isChecked: true
-        })
-    ul.controls__radio-buttons
-      li.controls__radio-buttons-item
-        +radio-button({
-          text: 'Пластмассовый мир победил',
-          name: 'radio',
-          value: 'plastic-world'
-        })
-      li.controls__radio-buttons-item
-        +radio-button({
-          text: 'Макет оказался сильней',
-          name: 'radio',
-          value: 'strong-maket',
-          hovered: true
-        })
-      li.controls__radio-buttons-item
-        +radio-button({
-          text: 'Последний кораблик остыл',
-          name: 'radio',
-          value: 'boat',
-          isChecked: true
-        })
+    .controls__title
+      +text({
+        text: title,
+        type: 'h3',
+        color: 'primary',
+        weight: 'medium'
+      })
+    .controls__controls
+      ul.controls__checkboxs
+        li.controls__checkboxs-item
+          +checkbox({
+            text: 'Выбери меня',
+            name: 'choose-me'
+          })
+        li.controls__checkboxs-item
+          +checkbox({
+            text: 'Выбери меня',
+            name: 'choose-me',
+            hovered: true
+          })
+        li.controls__checkboxs-item
+          +checkbox({
+            text: 'Птица счастья завтрашнего дня',
+            name: 'choose-me',
+            isChecked: true
+          })
+      ul.controls__radio-buttons
+        li.controls__radio-buttons-item
+          +radio-button({
+            text: 'Пластмассовый мир победил',
+            name: 'radio',
+            value: 'plastic-world'
+          })
+        li.controls__radio-buttons-item
+          +radio-button({
+            text: 'Макет оказался сильней',
+            name: 'radio',
+            value: 'strong-maket',
+            hovered: true
+          })
+        li.controls__radio-buttons-item
+          +radio-button({
+            text: 'Последний кораблик остыл',
+            name: 'radio',
+            value: 'boat',
+            isChecked: true
+          })

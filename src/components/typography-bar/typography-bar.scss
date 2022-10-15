@@ -27,7 +27,7 @@
     color: $secondaryColor;
     cursor: pointer;
     outline: none;
-    
+
     &::after {
       position: absolute;
       left: 0;
@@ -85,8 +85,9 @@
       column-gap: $gutter;
 
       @media screen and (max-width: $mobileWidth) {
-        grid-template-columns: 1fr 3fr;
+        grid-template-columns: 1fr;
         column-gap: $mobileGutter;
+        row-gap: calc($mobileGutter / 2);
       }
     }
   }

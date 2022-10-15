@@ -2,5 +2,44 @@
 
 .accordions {
   display: grid;
-  row-gap: 24px;
+  grid-template-columns: repeat(calc(($desktopColumns / 4) * 3), 1fr);
+  column-gap: $gutter;
+
+  @media screen and (max-width: $tabletWidth) {
+    grid-template-columns: repeat(calc(($tabletColumns / 4) * 3), 1fr);
+  }
+
+  @media screen and (max-width: $mobileWidth) {
+    grid-template-columns: repeat($mobileColumns, 1fr);
+    column-gap: $mobileGutter;
+  }
+
+  &__title {
+    grid-column: 1 / calc((($desktopColumns / 4) * 2) + 1);
+    margin-bottom: $gutter;
+
+    @media screen and (max-width: $tabletWidth) {
+      grid-column: 1 / calc(($tabletColumns / 4) * 3);
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      grid-column: 1 / calc((($mobileColumns / 4) * 3) + 1);
+      margin-bottom: $mobileGutter;
+    }
+  }
+
+  &__accordions {
+    display: grid;
+    grid-column: 1 / calc((($desktopColumns / 4) * 3) + 1);
+    row-gap: calc($gutter * 0.75);
+
+    @media screen and (max-width: $tabletWidth) {
+      grid-column: 1 / calc((($tabletColumns / 4) * 3) + 1);
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      grid-column: 1 / calc($mobileColumns + 1);
+      row-gap: calc($mobileGutter * 0.75);
+    }
+  }
 }

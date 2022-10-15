@@ -1,34 +1,49 @@
+include ~/components/text/text
 include ~/components/select/select
 
-mixin selects()
+mixin selects({ title, description } = {})
   .selects
-    +select({
-      type: 'text',
-      placeholder: 'Выберите что-нибудь',
-      prompt: 'Выберите что-нибудь',
-      hasJsClass: true,
-      items: [
-        { text: 'Первый стул' },
-        { text: 'Второй стул' },
-        { text: 'Выбранный пункт' },
-        { text: 'Теорема Эскобара' },
-        { text: 'Теорема Эскобара' },
-      ]
-    })
-    +select({
-      type: 'text',
-      placeholder: 'Выберите что-нибудь',
-      hovered: true
-    })
-    +select({
-      type: 'text',
-      placeholder: 'Выберите что-нибудь',
-      prompt: 'Выберите что-нибудь',
-      isOpened: true,
-      items: [
-        { text: 'Первый стул' },
-        { text: 'Второй стул' },
-        { text: 'Выбранный пункт' },
-        { text: 'Теорема Эскобара' },
-      ]
-    })
+    .selects__title
+      +text({
+        text: title,
+        type: 'h3',
+        color: 'primary',
+        weight: 'medium'
+      })
+    .selects__description
+      +text({
+        text: description,
+        type: 'p',
+        color: 'primary'
+      })
+    .selects__selects
+      +select({
+        type: 'text',
+        placeholder: 'Выберите что-нибудь',
+        prompt: 'Выберите что-нибудь',
+        hasJsClass: true,
+        items: [
+          { text: 'Первый стул' },
+          { text: 'Второй стул' },
+          { text: 'Выбранный пункт' },
+          { text: 'Теорема Эскобара' },
+          { text: 'Теорема Эскобара' },
+        ]
+      })
+      +select({
+        type: 'text',
+        placeholder: 'Выберите что-нибудь',
+        hovered: true
+      })
+      +select({
+        type: 'text',
+        placeholder: 'Выберите что-нибудь',
+        prompt: 'Выберите что-нибудь',
+        isOpened: true,
+        items: [
+          { text: 'Первый стул' },
+          { text: 'Второй стул' },
+          { text: 'Выбранный пункт' },
+          { text: 'Теорема Эскобара' },
+        ]
+      })

@@ -2,18 +2,49 @@
 
 .buttons {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: end;
+  grid-template-columns: repeat(calc(($desktopColumns / 4) * 3), 1fr);
   column-gap: $gutter;
-  row-gap: calc($gutter * 3.375);
 
   @media screen and (max-width: $tabletWidth) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(calc(($tabletColumns / 4) * 3), 1fr);
   }
 
   @media screen and (max-width: $mobileWidth) {
+    grid-template-columns: repeat($mobileColumns, 1fr);
     column-gap: $mobileGutter;
-    row-gap: calc($mobileGutter * 3.375);
+  }
+
+  &__title {
+    grid-column: 1 / calc((($desktopColumns / 4) * 2) + 1);
+    margin-bottom: calc($gutter * 2.375);
+
+    @media screen and (max-width: $tabletWidth) {
+      grid-column: 1 / calc(($tabletColumns / 4) * 3);
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      grid-column: 1 / calc((($mobileColumns / 4) * 3) + 1);
+      margin-bottom: calc($mobileGutter * 2.375);
+    }
+  }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column: 1 / calc((($desktopColumns / 4) * 3) + 1);
+    column-gap: $gutter;
+    row-gap: calc($gutter * 2.375);
+
+    @media screen and (max-width: $tabletWidth) {
+      grid-template-columns: 1fr 1fr;
+      grid-column: 1 / calc((($tabletColumns / 4) * 3) + 1);
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      grid-column: 1 / calc($mobileColumns + 1);
+      column-gap: $mobileGutter;
+      row-gap: calc($mobileGutter * 2.375);
+    }
   }
 
   &__item {

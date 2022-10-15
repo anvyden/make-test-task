@@ -8,6 +8,7 @@ class Accordion {
     this._findElements();
     this._bindEventsListeners();
     this._getHeight();
+    this._setPadding();
     this._hideBody();
   }
 
@@ -48,6 +49,11 @@ class Accordion {
     this.bodyHeight = this.body.offsetHeight;
   }
 
+  _setPadding() {
+    this.paddingTop = 9;
+    this.paddingBottom = 30;
+  }
+
   _hideBody() {
     this.body.style.visibility = 'hidden';
     this.body.style.maxHeight = '0';
@@ -55,13 +61,11 @@ class Accordion {
   }
 
   _showBody() {
-    const paddingTop = 9;
-    const paddingBottom = 30;
     this.body.style.visibility = 'visible';
     this.body.style.maxHeight = `${
-      this.bodyHeight + paddingTop + paddingBottom
+      this.bodyHeight + this.paddingTop + this.paddingBottom
     }px`;
-    this.body.style.padding = `${paddingTop}px 0 ${paddingBottom}px 0`;
+    this.body.style.padding = `${this.paddingTop}px 0 ${this.paddingBottom}px 0`;
   }
 
   _isOpened() {

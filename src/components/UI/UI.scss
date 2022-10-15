@@ -28,20 +28,6 @@
     }
   }
 
-  &__title-fields {
-    grid-column: 1 / calc((($desktopColumns / 4) * 2) + 1);
-    margin-bottom: calc($gutter * 2.875);
-
-    @media screen and (max-width: $tabletWidth) {
-      grid-column: 1 / calc(($tabletColumns / 4) * 3);
-    }
-
-    @media screen and (max-width: $mobileWidth) {
-      grid-column: 1 / calc((($mobileColumns / 4) * 3) + 1);
-      margin-bottom: calc($mobileGutter * 2.875);
-    }
-  }
-
   &__fields {
     grid-column: 1 / calc((($desktopColumns / 4) * 3) + 1);
     margin-bottom: calc($gutter * 2.8125);
@@ -53,34 +39,6 @@
     @media screen and (max-width: $mobileWidth) {
       grid-column: 1 / calc($mobileColumns + 1);
       margin-bottom: calc($mobileGutter * 2.8125);
-    }
-  }
-
-  &__title-selects {
-    grid-column: 1 / calc((($desktopColumns / 4) * 2) + 1);
-    margin-bottom: calc($gutter * 0.75);
-
-    @media screen and (max-width: $tabletWidth) {
-      grid-column: 1 / calc(($tabletColumns / 4) * 3);
-    }
-
-    @media screen and (max-width: $mobileWidth) {
-      grid-column: 1 / calc((($mobileColumns / 4) * 3) + 1);
-      margin-bottom: calc($mobileGutter * 0.75);
-    }
-  }
-
-  &__description-selects {
-    grid-column: 1 / calc((($desktopColumns / 4) * 2) + 1);
-    margin-bottom: calc($gutter * 1.5);
-
-    @media screen and (max-width: $tabletWidth) {
-      grid-column: 1 / calc(($tabletColumns / 4) * 3);
-    }
-
-    @media screen and (max-width: $mobileWidth) {
-      grid-column: 1 / calc((($mobileColumns / 4) * 3) + 1);
-      margin-bottom: calc($mobileGutter * 1.5);
     }
   }
 
@@ -98,20 +56,6 @@
     }
   }
 
-  &__title-buttons {
-    grid-column: 1 / calc((($desktopColumns / 4) * 2) + 1);
-    margin-bottom: calc($gutter * 2.375);
-
-    @media screen and (max-width: $tabletWidth) {
-      grid-column: 1 / calc(($tabletColumns / 4) * 3);
-    }
-
-    @media screen and (max-width: $mobileWidth) {
-      grid-column: 1 / calc((($mobileColumns / 4) * 3) + 1);
-      margin-bottom: calc($mobileGutter * 2.375);
-    }
-  }
-
   &__buttons {
     grid-column: 1 / calc((($desktopColumns / 4) * 3) + 1);
     margin-bottom: calc($gutter * 2);
@@ -123,20 +67,6 @@
     @media screen and (max-width: $mobileWidth) {
       grid-column: 1 / calc($mobileColumns + 1);
       margin-bottom: calc($mobileGutter * 2);
-    }
-  }
-
-  &__title-controls {
-    grid-column: 1 / calc((($desktopColumns / 4) * 2) + 1);
-    margin-bottom: $gutter;
-
-    @media screen and (max-width: $tabletWidth) {
-      grid-column: 1 / calc(($tabletColumns / 4) * 3);
-    }
-
-    @media screen and (max-width: $mobileWidth) {
-      grid-column: 1 / calc((($mobileColumns / 4) * 3) + 1);
-      margin-bottom: $mobileGutter;
     }
   }
 
