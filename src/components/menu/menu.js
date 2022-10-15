@@ -8,7 +8,7 @@ class Menu {
     this._findElements();
     this._getCoords();
     this._windowScrollHandler();
-    this.activeItem = this._setActiveItem();
+    this.activeItem = this._changeActiveItem();
   }
 
   _findElements() {
@@ -27,10 +27,10 @@ class Menu {
   }
 
   _windowScrollHandler() {
-    window.addEventListener('scroll', this._setActiveItem.bind(this));
+    window.addEventListener('scroll', this._changeActiveItem.bind(this));
   }
 
-  _setActiveItem() {
+  _changeActiveItem() {
     const coordY = document.documentElement.getBoundingClientRect().top * -1;
     this.activeItem = this.activeItem ? this.activeItem : null;
 
@@ -39,34 +39,20 @@ class Menu {
     }
 
     if (coordY <= this.gridCoordY - 1) {
-      this.items[0].classList.add('menu__item--active');
-      this.activeItem = this.items[0];
+      this._setActiveItem(0);
     } else if (coordY <= this.typographyCoordY - 1) {
-      this.items[1].classList.add('menu__item--active');
-      this.activeItem = this.items[1];
+      this._setActiveItem(1);
     } else if (coordY <= this.uiCoordY - 1) {
-      this.items[2].classList.add('menu__item--active');
-      this.activeItem = this.items[2];
+      this._setActiveItem(2);
     } else if (coordY >= this.uiCoordY) {
-      this.items[3].classList.add('menu__item--active');
-      this.activeItem = this.items[3];
+      this._setActiveItem(3);
     }
   }
 
-  // _bindEventsListeners() {
-  //   this.items.forEach((item) => {
-  //     item.addEventListener('pointerdown', this._handleItemPointerDown(item));
-  //     item.addEventListener('keydown', this._handleItemKeyDown(item));
-  //   });
-  // }
-
-  // _handleItemPointerDown(item) {
-  //   item.classList.add('menu__item--active');
-  // }
-
-  // _handleItemKeyDown(item) {
-  //   item.classList.add('menu__item--active');
-  // }
+  _setActiveItem(index) {
+    this.activeItem = this.items[index];
+    this.activeItem.classList.add('menu__item--active');
+  }
 }
 
 export default Menu;
