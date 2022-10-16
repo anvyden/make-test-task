@@ -39,23 +39,4 @@
       }
     }
   }
-
-  &--style-menu {
-    .header {
-      &__burger {
-        width: 24px;
-        height: 24px;
-        background: url('~/components/header/img/cross.svg') no-repeat center;
-
-        &:hover,
-        &:focus-visible {
-          background: url('~/components/header/img/cross-active.svg') no-repeat center
-        }
-      }
-
-      &__info {
-        gap: calc($gutter * 2);
-      }
-    }
-  }
 }

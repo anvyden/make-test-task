@@ -12,20 +12,19 @@ html(lang="ru")
     title 'Test task'
   body
     .page-layout.js-page-layout
+      block menu
+        +menu({
+          title: 'Наркевич Денис Владимирович',
+          description: 'Откликнулся на вакансию на HH. frontend-разработке обучался с нуля самостоятельно, пользуясь раличными учебниками и доками. Сейчас прохожу roadmap от компании "MetaLamp". Окончил магистратуру в ТПУ по специальности "Электроэнергетика и электротехника"',
+          number: '+7 (950) 578-56-65',
+          linkHref: 'https://t.me/infinitystep',
+          linkText: 'Ссылка на телеграм'
+        })
       .page-layout__wrapper
         .page-layout__container
           block header
             +header({
               title: 'Наркевич',
-              subtitle: 'Денис Владимирович',
-              burgerId: 'open'
+              subtitle: 'Денис Владимирович'
             })
           block content
-    block menu
-      +menu({
-        title: 'Наркевич Денис Владимирович',
-        description: 'Краткое описание. Например, студент 4 курса специальности «Прикладная информатика» в КузГТУ',
-        number: '+7 (950) 578-56-65',
-        linkHref: 'https://t.me/infinitystep',
-        linkText: 'Ссылка на телеграм'
-      })

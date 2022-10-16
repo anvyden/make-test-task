@@ -1,7 +1,7 @@
 include ~/components/logo/logo
 include ~/components/text/text
 
-mixin header({ title, subtitle, burgerId, forMenu } = {})
+mixin header({ title, subtitle } = {})
   .header.js-header
     .header__info
       .header__logo
@@ -29,9 +29,7 @@ mixin header({ title, subtitle, burgerId, forMenu } = {})
         'header__burger',
         'js-header__burger'
       ],
-      'data-id': burgerId,
       tabIndex: '0'
     })
-      if (!forMenu)
-        .header__burger-line
-        .header__burger-line
+      .header__burger-line
+      .header__burger-line

@@ -8,7 +8,6 @@ class Header {
 
   _init() {
     this._findElements();
-    this._setup();
     this.menu = new Menu(this.menuNode);
     this._bindEventsListeners();
   }
@@ -17,11 +16,6 @@ class Header {
     this.burger = this.header.querySelector('.js-header__burger');
     this.menuNode = document.querySelector('.js-menu');
     this.pageLayout = document.querySelector('.js-page-layout');
-  }
-
-  _setup() {
-    this.burgerId = this.burger.dataset.id;
-    console.log(this.burgerId);
   }
 
   _bindEventsListeners() {
@@ -36,8 +30,7 @@ class Header {
   }
 
   _handleBurgerPointerDown() {
-    if (this.burgerId === 'open') this._openMenu();
-    if (this.burgerId === 'close') this._closeMenu();
+    this._openMenu();
   }
 
   _handleBurgerKeyDown(event) {
@@ -46,24 +39,16 @@ class Header {
     if (code === 'Space') {
       event.preventDefault();
 
-      if (this.burgerId === 'open') this._openMenu();
-      if (this.burgerId === 'close') this._closeMenu();
+      this._openMenu();
     }
   }
 
   _openMenu() {
     this.pageLayout.classList.add('page-layout--hidden');
-    this.menu.open();
-    setTimeout(() => {
-      this.pageLayout.style.display = 'none';
-    }, 750);
-  }
 
-  _closeMenu() {
-    this.pageLayout.classList.remove('page-layout--hidden');
-    this.menu.close();
     setTimeout(() => {
-      this.pageLayout.style.display = 'block';
+      this.menu.open();
+      this.pageLayout.classList.remove('page-layout--hidden');
     }, 750);
   }
 }

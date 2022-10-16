@@ -1,12 +1,10 @@
 @import '~/scss/variables';
 
 .menu {
-  position: relative;
   display: none;
   justify-content: center;
   opacity: 0;
   padding: 8px;
-  height: 100vh;
   background: url('~/components/menu/img/menu-background.jpg') no-repeat center;
   background-size: cover;
   transition: opacity 1s;
@@ -15,57 +13,92 @@
     opacity: 1;
   }
 
-  &__container {
+  &__wrapper {
+    position: relative;
     display: grid;
-    grid-template-columns: repeat(calc(($desktopColumns / 4) * 3), 1fr);
-    column-gap: 32px;
+    grid-template-columns: repeat($desktopColumns, 1fr);
+    column-gap: $gutter;
     max-width: 1312px;
 
     @media screen and (max-width: 1199px) {
-      grid-template-columns: repeat(calc(($tabletColumns / 4) * 3), 1fr);
+      grid-template-columns: repeat($tabletColumns, 1fr);
       max-width: 928px;
     }
 
     @media screen and (max-width: 735px) {
       grid-template-columns: repeat($mobileColumns, 1fr);
       max-width: 424px;
+      column-gap: $mobileGutter;
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column: 1 / calc((($desktopColumns / 4) * 3) - 1);
+    column-gap: $gutter;
+    row-gap: calc($gutter * 1.5);
+    padding: calc($gutter * 0.75) 0 calc($gutter * 1.25) calc($gutter * 1.75);
+    background: $white;
+
+    @media screen and (max-width: 1199px) {
+      grid-column: 1 / calc(($tabletColumns / 4) * 3);
+      padding: calc($gutter * 0.75) calc($gutter * 0.625) calc($gutter * 1.25)
+        calc($gutter * 0.9375);
+    }
+
+    @media screen and (max-width: 735px) {
+      grid-column: 1 / calc($mobileColumns + 1);
+      column-gap: $mobileGutter;
+      row-gap: calc($mobileGutter * 1.5);
+      padding: calc($mobileGutter * 0.75) calc($mobileGutter * 0.625)
+        calc($mobileGutter * 1.25) calc($mobileGutter * 0.9375);
     }
   }
 
   &__header {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    max-width: 1312px;
-    padding: $gutter $gutter 0 calc($gutter * 1.75);
+    display: grid;
+    grid-template-columns: repeat(calc((($desktopColumns / 4) * 2) + 1), 1fr);
+    column-gap: $gutter;
+    align-items: center;
 
     @media screen and (max-width: 1199px) {
-      max-width: 928px;
+      grid-template-columns: repeat(calc((($tabletColumns / 4) * 2) + 1), 1fr);
     }
 
     @media screen and (max-width: 735px) {
-      max-width: 424px;
-      padding: $mobileGutter $mobileGutter 0 calc($mobileGutter * 1.75);
+      grid-template-columns: 1fr;
+      column-gap: $mobileGutter;
+      row-gap: $mobileGutter;
     }
+
+    &-text {
+      grid-column: 2 / calc(($desktopColumns / 4) + 1);
+
+      @media screen and (max-width: 735px) {
+        grid-column: auto;
+      }
+    }
+  }
+
+  &__logo {
+    grid-column: auto;
   }
 
   &__content {
     display: grid;
     grid-template-columns: repeat(calc((($desktopColumns / 4) * 2) + 1), 1fr);
-    grid-column: 1 / calc((($desktopColumns / 4) * 3) - 1);
     column-gap: $gutter;
-    padding: 112px 0 40px 56px;
-    background: $white;
+    row-gap: calc($gutter * 9.5);
 
     @media screen and (max-width: $tabletWidth) {
       grid-template-columns: repeat(calc((($tabletColumns / 4) * 2) + 1), 1fr);
-      grid-column: 1 / calc((($tabletColumns / 4) * 3) - 1);
     }
 
     @media screen and (max-width: $mobileWidth) {
       grid-template-columns: repeat($mobileColumns, 1fr);
-      grid-column: 1 / calc($mobileColumns + 1);
       column-gap: $mobileGutter;
+      row-gap: calc($mobileGutter * 9.5);
     }
   }
 
@@ -106,7 +139,7 @@
     margin-bottom: $gutter;
 
     @media screen and (max-width: $tabletWidth) {
-      grid-column: 2 / calc((($tabletColumns / 4) * 2) + 1);
+      grid-column: 2 / calc(($tabletColumns / 4) * 3);
     }
 
     @media screen and (max-width: $mobileWidth) {
@@ -119,7 +152,7 @@
     grid-column: 2 / calc(($desktopColumns / 4) + 1);
 
     @media screen and (max-width: $tabletWidth) {
-      grid-column: 2 / calc(($tabletColumns / 4) * 2);
+      grid-column: 2 / calc((($tabletColumns / 4) * 2) + 1);
     }
 
     @media screen and (max-width: $mobileWidth) {
@@ -135,7 +168,7 @@
     align-items: center;
 
     @media screen and (max-width: $tabletWidth) {
-      grid-column: 2 / calc((($tabletColumns / 4) * 2) + 1);
+      grid-column: 2 / calc(($tabletColumns / 4) * 3);
     }
 
     @media screen and (max-width: $mobileWidth) {
@@ -158,6 +191,25 @@
 
     &-text {
       color: $activeColor;
+    }
+  }
+
+  &__burger {
+    position: absolute;
+    top: 28px;
+    right: 40px;
+    width: 24px;
+    height: 24px;
+    background: url('~/components/menu/img/cross.svg') no-repeat center;
+    outline: none;
+
+    &:hover,
+    &:focus-visible {
+      background: url('~/components/menu/img/cross-active.svg') no-repeat center;
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      background: url('~/components/menu/img/cross-black.svg') no-repeat center;
     }
   }
 }

@@ -6,22 +6,55 @@ class Menu {
 
   _init() {
     this._findElements();
+    this._bindEventsListeners();
   }
 
   _findElements() {
-    this.header = this.root.querySelector('.js-header');
+    this.burger = this.root.querySelector('.js-menu__burger');
+    this.pageLayout = document.querySelector('.js-page-layout');
+    this.header = document.querySelector('.js-header');
+  }
+
+  _bindEventsListeners() {
+    this.burger.addEventListener(
+      'pointerdown',
+      this._handleBurgerPointerDown.bind(this)
+    );
+    this.burger.addEventListener(
+      'keydown',
+      this._handleBurgerKeyDown.bind(this)
+    );
+  }
+
+  _handleBurgerPointerDown() {
+    this.close();
+  }
+
+  _handleBurgerKeyDown(event) {
+    const { code } = event;
+
+    if (code === 'Space') {
+      event.preventDefault();
+
+      this.close();
+    }
   }
 
   open() {
-    this.header.classList.add('header--style-menu');
     this.root.classList.add('menu--visible');
     this.root.style.display = 'flex';
+    this.header.style.display = 'none';
   }
 
   close() {
-    this.header.classList.remove('header--style-menu');
     this.root.classList.remove('menu--visible');
-    this.root.style.display = 'none';
+    this.pageLayout.classList.add('page-layout--hidden');
+
+    setTimeout(() => {
+      this.root.style.display = 'none';
+      this.header.style.display = 'flex';
+      this.pageLayout.classList.remove('page-layout--hidden');
+    }, 750);
   }
 }
 

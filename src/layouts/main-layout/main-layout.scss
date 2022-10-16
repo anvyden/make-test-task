@@ -1,7 +1,9 @@
 @import '~/scss/variables';
 
 .page-layout {
-  display: block;
+  // display: flex;
+  // justify-content: center;
+  // flex-wrap: wrap;
   opacity: 1;
   transition: opacity 1s;
 
@@ -12,7 +14,6 @@
   &__wrapper {
     display: flex;
     justify-content: center;
-    margin: 0 auto;
     padding: $gutter;
 
     @media screen and (max-width: $mobileWidth) {
