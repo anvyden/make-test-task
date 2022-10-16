@@ -45,6 +45,7 @@ class Header {
 
   _openMenu() {
     this.pageLayout.classList.add('page-layout--hidden');
+    window.scrollTo(0, 0);
 
     setTimeout(() => {
       this.menu.open();

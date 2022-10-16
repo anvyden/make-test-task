@@ -12,9 +12,14 @@
     "stylelint": "stylelint \"src/**/*.scss\"",
     "stylelint:fix": "stylelint \"src/**/*.scss\" --fix"
   },
+  "browserslist": [
+    "> 0.25%",
+    "not dead",
+    "last 3 versions"
+  ],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/anvyden/make-test-task.git"
   },
   "keywords": [
     "test",
