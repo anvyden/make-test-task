@@ -6,7 +6,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
-const ESLint = require('eslint-webpack-plugin')
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;

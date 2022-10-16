@@ -21,11 +21,11 @@ class Header {
   _bindEventsListeners() {
     this.burger.addEventListener(
       'pointerdown',
-      this._handleBurgerPointerDown.bind(this)
+      this._handleBurgerPointerDown.bind(this),
     );
     this.burger.addEventListener(
       'keydown',
-      this._handleBurgerKeyDown.bind(this)
+      this._handleBurgerKeyDown.bind(this),
     );
   }
 

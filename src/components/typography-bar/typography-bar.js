@@ -65,7 +65,7 @@ class TypographyBar {
   _bindEventsListeners() {
     this.root.addEventListener(
       'pointerdown',
-      this._handleBarPointerDown.bind(this)
+      this._handleBarPointerDown.bind(this),
     );
     this.root.addEventListener('keydown', this._handleBarKeyDown.bind(this));
   }
@@ -107,9 +107,7 @@ class TypographyBar {
   }
 
   _getNewItems(screen) {
-    const newItems = [...this.items].map((item, i) => {
-      return this._changeItem(item, i, screen);
-    });
+    const newItems = [...this.items].map((item, i) => this._changeItem(item, i, screen));
 
     return newItems;
   }
@@ -121,7 +119,7 @@ class TypographyBar {
 
     const descriptionText = this.typography.description[i];
     const valueText = this.typography.value[i];
-    const { fontSize, lineHeight } = this.typography['params'][screen][i];
+    const { fontSize, lineHeight } = this.typography.params[screen][i];
 
     itemDescriptionNode.innerText = descriptionText;
     itemValueNode.innerText = valueText;

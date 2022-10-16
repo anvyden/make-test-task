@@ -19,11 +19,11 @@ class Accordion {
   _bindEventsListeners() {
     this.accordion.addEventListener(
       'pointerdown',
-      this._handleAccordionPointerDown.bind(this)
+      this._handleAccordionPointerDown.bind(this),
     );
     this.accordion.addEventListener(
       'keydown',
-      this._handleAccordionKeyDown.bind(this)
+      this._handleAccordionKeyDown.bind(this),
     );
   }
 

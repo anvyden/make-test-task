@@ -12,15 +12,15 @@ class Select {
   _bindEventsListeners() {
     this.select.addEventListener(
       'pointerdown',
-      this._handleSelectPointerDown.bind(this)
+      this._handleSelectPointerDown.bind(this),
     );
     this.select.addEventListener(
       'keydown',
-      this._handleSelectKeyDown.bind(this)
+      this._handleSelectKeyDown.bind(this),
     );
     document.addEventListener(
       'pointerdown',
-      this._handleDocumentPointerDown.bind(this)
+      this._handleDocumentPointerDown.bind(this),
     );
   }
 
