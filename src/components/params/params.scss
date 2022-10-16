@@ -13,6 +13,7 @@
 
   @media screen and (max-width: $mobileWidth) {
     grid-template-columns: repeat(2, 1fr);
+    column-gap: $mobileGutter;
     gap: $mobileGutter;
   }
 

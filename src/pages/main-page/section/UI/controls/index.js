@@ -1,3 +1,4 @@
+import '~/components/text';
 import '~/components/checkbox';
 import '~/components/radio-button';
 

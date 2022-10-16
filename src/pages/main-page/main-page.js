@@ -1,6 +1,5 @@
 import '~/main';
-import '~/components/header';
-import '~/components/menu';
+import '~/layouts/main-layout';
 import '~/components/aside';
 import '~/pages/main-page/main-content';
 
