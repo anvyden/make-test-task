@@ -46,6 +46,7 @@
     "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-pug": "^1.2.4",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "image-minimizer-webpack-plugin": "^3.6.1",
     "imagemin": "^8.0.1",
