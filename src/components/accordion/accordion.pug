@@ -19,6 +19,6 @@ mixin accordion({ header, text, hovered, hasJsClass, isOpened } = {})
       tabIndex: '0',
       'data-type': 'header'
     })=header
-    .accordion__body.js-accordion__body=text
+    .accordion__body.js-accordion__body!=text
     .accordion__border
     
