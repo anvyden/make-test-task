@@ -30,13 +30,13 @@
 
 **Development server:**
 
-`npm start` - **start of the project on the server localhost:8081**
+`npm start` - **start the project on the server localhost:8081**
 
 **Development and production project:**
 
-`npm run dev` - **start of the project in development mode**
+`npm run dev` - **start the project in development mode**
 
-`npm run build` - **start of the project in production mode**
+`npm run build` - **start the project in production mode**
 
 **Linting code:**
 
