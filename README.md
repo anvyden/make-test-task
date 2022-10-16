@@ -2,7 +2,7 @@
 
 [**Страница тестового задания**](https://anvyden.github.io/make-test-task/main-page.html)
 
-## Stack
+## Особенности проекта
 
 - Был применен компонентный подход, который заключается в разделении элементов на независимые блоки, а именно методология [БЭМ](https://ru.bem.info/methodology/quick-start/)
 - В качестве препроцессора для `HTML` был использован [Pug(Jade)](https://gist.github.com/neretin-trike/53aff5afb76153f050c958b82abd9228).
@@ -12,7 +12,7 @@
 - Для соблюдения единобразия и чистоты кода был использован [стайлгайд от AirBnB](https://github.com/airbnb/javascript), который проверялся линтером [eslint](https://eslint.org/) и [stylelint](https://stylelint.io)
 - Разработка велась под последние версии Chrome и Firefox и др. (last 3 version)
 
-## Особенности
+## Примечания
 
 У `Pug` есть особенность - в режиме работы `devServer` (команда _npm start_), чтобы он подгружал картинки на страницу нужно делать сохранение (ctrl + s) в любом файле с расширением _.pug_
 
