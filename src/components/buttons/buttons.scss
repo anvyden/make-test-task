@@ -23,7 +23,7 @@
     }
 
     @media screen and (max-width: $mobileWidth) {
-      grid-column: 1 / calc((($mobileColumns / 4) * 3) + 1);
+      grid-column: 1 / calc($mobileColumns + 1);
       margin-bottom: calc($mobileGutter * 2.375);
     }
   }
@@ -53,8 +53,12 @@
     &-state {
       position: absolute;
       left: 0;
-      top: -24px;
+      top: calc($gutter * -0.75);
       transform: translateY(-100%);
+
+      @media screen and (max-width: $mobileWidth) {
+        top: calc($mobileGutter * -0.75);
+      }
     }
   }
 }

@@ -1,13 +1,18 @@
+@import '~/scss/variables';
+
 .logo {
-  display: flex;
-  width: 40px;
-  height: 40px;
-
   &__link {
+    width: 40px;
+    height: 40px;
     display: flex;
-  }
+    align-items: center;
+    justify-content: center;
+    background: #ff3a62;
+    border-radius: 50%;
 
-  &__img {
-    width: 100%;    
+    &:hover,
+    &:focus-visible {
+      outline: 1px solid $activeColor;
+    }
   }
 }

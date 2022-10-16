@@ -1,27 +1,37 @@
 include ~/components/logo/logo
 include ~/components/text/text
 
-mixin header()
-  .header
+mixin header({ title, subtitle, burgerId, forMenu } = {})
+  .header.js-header
     .header__info
       .header__logo
         +logo
-      .header__person 
-        .header__person-surname 
-          +text({
-            text: 'Наркевич',
-            type: 'p',
-            modifier: 'additional',
-            weight: 'medium',
-            color: 'primary'
-          })
-        .header__person-name
-          +text({
-            text: 'Денис Владимирович',
-            type: 'p',
-            modifier: 'additional',
-            color: 'secondary'
-          })
-    .header__burger
-      .header__burger-line
-      .header__burger-line
+      .header__text
+        if (title)
+          .header__title 
+            +text({
+              text: title,
+              type: 'p',
+              modifier: 'additional',
+              weight: 'medium',
+              color: 'primary'
+            })
+        if (subtitle)
+          .header__subtitle
+            +text({
+              text: subtitle,
+              type: 'p',
+              modifier: 'additional',
+              color: 'secondary'
+            })
+    div&attributes({
+      class: [
+        'header__burger',
+        'js-header__burger'
+      ],
+      'data-id': burgerId,
+      tabIndex: '0'
+    })
+      if (!forMenu)
+        .header__burger-line
+        .header__burger-line

@@ -7,11 +7,14 @@
 
   &__info {
     display: flex;
+    align-items: center;
     gap: $gutter;
   }
 
   &__burger {
     height: 10px;
+    cursor: pointer;
+    outline: none;
 
     &-line {
       width: 32px;
@@ -20,9 +23,38 @@
       text-align: right;
 
       &:last-child {
-        margin-top: 6px;
         width: 24px;
         margin: 6px 0 0 auto;
+      }
+    }
+
+    &:hover,
+    &:focus-visible {
+      .header {
+        &__burger {
+          &-line {
+            background-color: $activeColor;
+          }
+        }
+      }
+    }
+  }
+
+  &--style-menu {
+    .header {
+      &__burger {
+        width: 24px;
+        height: 24px;
+        background: url('~/components/header/img/cross.svg') no-repeat center;
+
+        &:hover,
+        &:focus-visible {
+          background: url('~/components/header/img/cross-active.svg') no-repeat center
+        }
+      }
+
+      &__info {
+        gap: calc($gutter * 2);
       }
     }
   }

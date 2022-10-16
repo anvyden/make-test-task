@@ -1,0 +1,43 @@
+include ~/components/text/text
+include ~/components/header/header
+
+mixin menu({ title, description, number, linkHref, linkText } = {})
+  .menu.js-menu
+    .menu__container
+      .menu__header
+          +header({
+            subtitle: 'Задание выполнил',
+            burgerId: 'close',
+            forMenu: true
+          })
+      .menu__content
+        .menu__body
+          .menu__title
+            +text({
+              text: title,
+              type: 'h2',
+              color: 'primary',
+              weight: 'bold'
+            })
+          .menu__description
+            +text({
+              text: description,
+              type: 'p',
+              color: 'primary'
+            }) 
+          .menu__number
+            +text({
+              text: number,
+              type: 'p',
+              modifier: 'large',
+              color: 'primary'
+            }) 
+        .menu__footer
+          a&attributes({
+            class: 'menu__link',
+            href: linkHref,
+            target: '_blank',
+            rel: 'noopener noreferrer'
+          })
+          .menu__link-text=linkText
+    

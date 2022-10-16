@@ -6,8 +6,12 @@
   &__state {
     position: absolute;
     left: 0;
-    top: -40px;
+    top: calc($gutter * -1.25);
     transform: translateY(-100%);
+
+    @media screen and (max-width: $mobileWidth) {
+      top: calc($mobileGutter * -1.25);
+    }
   }
 
   &__prompt {

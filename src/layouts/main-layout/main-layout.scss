@@ -1,6 +1,14 @@
 @import '~/scss/variables';
 
 .page-layout {
+  display: block;
+  opacity: 1;
+  transition: opacity 1s;
+
+  &--hidden {
+    opacity: 0;
+  }
+
   &__wrapper {
     display: flex;
     justify-content: center;
@@ -13,6 +21,8 @@
   }
 
   &__container {
+    position: relative;
+    width: 100%;
     max-width: 1312px;
 
     @media screen and (max-width: 1199px) {
