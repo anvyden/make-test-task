@@ -1,3 +1,3 @@
-import '~/components/menu';
+import '~/components/navigation';
 
 import './aside.scss';

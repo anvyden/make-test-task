@@ -1,0 +1,12 @@
+mixin navigation(items = [])
+  nav.navigation.js-navigation
+    ul.navigation__list
+      each item in items
+        li.navigation__item.js-navigation__item
+          a&attributes({
+            class: [
+              'navigation__item-link',
+              'js-navigation__item-link'
+            ],
+            href: item.link
+          })=item.text

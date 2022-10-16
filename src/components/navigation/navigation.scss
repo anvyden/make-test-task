@@ -1,0 +1,44 @@
+@import '~/scss/variables';
+
+.navigation {
+  &__list {
+    display: grid;
+    row-gap: calc($gutter / 2);
+    list-style-type: none;
+
+    @media screen and (max-width: $mobileWidth) {
+      row-gap: calc($mobileGutter / 2);
+    }
+  }
+
+  &__item {
+    &-link {
+      display: inline-block;
+      font-size: 14px;
+      line-height: 20px;
+      color: $secondaryColor;
+      cursor: pointer;
+      text-decoration: none;
+      outline: none;
+
+      &--active {
+        color: $activeColor;
+      }
+
+      &:hover,
+      &:focus-visible {
+        color: $primaryColor;
+      }
+    }
+
+    &--active {
+      .navigation {
+        &__item {
+          &-link {
+            color: $activeColor;
+          }
+        }
+      }
+    }
+  }
+}

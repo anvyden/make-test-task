@@ -1,4 +1,4 @@
-class Menu {
+class Navigation {
   constructor(root) {
     this.root = root;
     this._init();
@@ -12,7 +12,7 @@ class Menu {
   }
 
   _findElements() {
-    this.items = this.root.querySelectorAll('.js-menu__item');
+    this.items = this.root.querySelectorAll('.js-navigation__item');
     this.task = document.getElementById('task');
     this.grid = document.getElementById('grid');
     this.typography = document.getElementById('typography');
@@ -35,7 +35,7 @@ class Menu {
     this.activeItem = this.activeItem ? this.activeItem : null;
 
     if (this.activeItem) {
-      this.activeItem.classList.remove('menu__item--active');
+      this.activeItem.classList.remove('navigation__item--active');
     }
 
     if (coordY <= this.gridCoordY - 1) {
@@ -51,8 +51,8 @@ class Menu {
 
   _setActiveItem(index) {
     this.activeItem = this.items[index];
-    this.activeItem.classList.add('menu__item--active');
+    this.activeItem.classList.add('navigation__item--active');
   }
 }
 
-export default Menu;
+export default Navigation;
