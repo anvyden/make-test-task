@@ -1,9 +1,9 @@
 @import '~/scss/variables';
 
 html {
-  font-family: $mainFont;
-  font-size: $mainFontSize;
-  line-height: $mainLineHeight;
   color: $primaryColor;
+  font-size: $mainFontSize;
+  font-family: $mainFont;
+  line-height: $mainLineHeight;
   scroll-behavior: smooth;
 }

@@ -30,14 +30,14 @@
 
   &__buttons {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     grid-column: 1 / calc((($desktopColumns / 4) * 3) + 1);
+    grid-template-columns: 1fr 1fr 1fr;
     column-gap: $gutter;
     row-gap: calc($gutter * 2.375);
 
     @media screen and (max-width: $tabletWidth) {
-      grid-template-columns: 1fr 1fr;
       grid-column: 1 / calc((($tabletColumns / 4) * 3) + 1);
+      grid-template-columns: 1fr 1fr;
     }
 
     @media screen and (max-width: $mobileWidth) {
@@ -52,8 +52,8 @@
 
     &-state {
       position: absolute;
-      left: 0;
       top: calc($gutter * -0.75);
+      left: 0;
       transform: translateY(-100%);
 
       @media screen and (max-width: $mobileWidth) {

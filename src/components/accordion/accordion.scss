@@ -15,30 +15,49 @@
     column-gap: $mobileGutter;
   }
 
+  &__border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $inActiveColor;
+    content: '';
+  }
+
   &__header {
-    grid-column: 1 / calc((($desktopColumns / 4) * 3) + 1);
     position: relative;
+    grid-column: 1 / calc((($desktopColumns / 4) * 3) + 1);
     width: 100%;
     padding-bottom: 15px;
     color: $secondaryColor;
-    cursor: pointer;
     outline: none;
+    cursor: pointer;
 
     &::after {
       position: absolute;
-      right: 0;
       top: 12px;
-      transform: translateY(-50%);
+      right: 0;
       width: 9px;
       height: 6px;
       background: url('~/components/accordion/img/arrow.svg');
-      content: '';
+      transform: translateY(-50%);
       transition: transform 0.5s;
+      content: '';
+    }
+
+    &--hovered {
+      color: $primaryColor;
+
+      ~ .accordion {
+        &__border {
+          background-color: $activeColor;
+        }
+      }
     }
 
     &:hover,
-    &:focus-visible,
-    &--hovered {
+    &:focus-visible {
       color: $primaryColor;
 
       ~ .accordion {
@@ -57,30 +76,6 @@
     }
   }
 
-  &__body {
-    grid-column: 1 / calc((($desktopColumns / 4) * 2) + 1);
-    overflow: hidden;
-    transition: max-height 0.5s, padding 0.5s, visibility 0.5s;
-
-    @media screen and (max-width: $tabletWidth) {
-      grid-column: 1 / calc(($tabletColumns / 4) * 3);
-    }
-
-    @media screen and (max-width: $mobileWidth) {
-      grid-column: 1 / calc((($mobileColumns / 4) * 4) + 1);
-    }
-  }
-
-  &__border {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-    background-color: $inActiveColor;
-    content: '';
-  }
-
   &--opened {
     .accordion {
       &__header {
@@ -92,13 +87,27 @@
       }
 
       &__body {
-        padding: 9px 0 30px 0;
+        padding: 9px 0 30px;
       }
 
       &__border {
         height: 2px;
         background-color: $activeColor;
       }
+    }
+  }
+
+  &__body {
+    grid-column: 1 / calc((($desktopColumns / 4) * 2) + 1);
+    overflow: hidden;
+    transition: max-height 0.5s, padding 0.5s, visibility 0.5s;
+
+    @media screen and (max-width: $tabletWidth) {
+      grid-column: 1 / calc(($tabletColumns / 4) * 3);
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      grid-column: 1 / calc((($mobileColumns / 4) * 4) + 1);
     }
   }
 }

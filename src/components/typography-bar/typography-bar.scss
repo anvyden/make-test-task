@@ -4,8 +4,8 @@
   &__bar {
     display: grid;
     grid-template-columns: repeat(calc(($desktopColumns / 4) * 3), 1fr);
-    column-gap: $gutter;
     padding-bottom: 15px;
+    column-gap: $gutter;
     border-bottom: 1px solid $inActiveColor;
 
     @media screen and (max-width: $tabletWidth) {
@@ -22,21 +22,21 @@
     position: relative;
     grid-column: 1fr;
     justify-self: start;
+    color: $secondaryColor;
     background: none;
     border: none;
-    color: $secondaryColor;
-    cursor: pointer;
     outline: none;
+    cursor: pointer;
 
     &::after {
       position: absolute;
-      left: 0;
       bottom: -16px;
+      left: 0;
       width: 0;
       height: 2px;
       background-color: $activeColor;
-      content: '';
       transition: width 0.5s;
+      content: '';
     }
 
     &:hover,

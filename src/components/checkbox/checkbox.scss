@@ -3,8 +3,8 @@
 .checkbox {
   &__text {
     display: inline-block;
-    mix-blend-mode: normal;
     opacity: 0.8;
+    mix-blend-mode: normal;
 
     &::before {
       position: absolute;
@@ -12,9 +12,9 @@
       left: -16px;
       width: 24px;
       height: 24px;
-      transform: translateX(-100%);
-      border: 2px solid $inputBorder;
       background-color: $white;
+      border: 2px solid $inputBorder;
+      transform: translateX(-100%);
       content: '';
     }
   }
@@ -25,8 +25,19 @@
     margin-left: 40px;
     cursor: pointer;
 
-    &:hover,
     &--hovered {
+      .checkbox {
+        &__text {
+          opacity: 1;
+
+          &::before {
+            border-color: $activeColor;
+          }
+        }
+      }
+    }
+
+    &:hover {
       .checkbox {
         &__text {
           opacity: 1;

@@ -2,25 +2,25 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
   &__info {
     display: flex;
-    align-items: center;
     gap: $gutter;
+    align-items: center;
   }
 
   &__burger {
     height: 10px;
-    cursor: pointer;
     outline: none;
+    cursor: pointer;
 
     &-line {
       width: 32px;
       height: 2px;
-      background-color: $primaryColor;
       text-align: right;
+      background-color: $primaryColor;
 
       &:last-child {
         width: 24px;

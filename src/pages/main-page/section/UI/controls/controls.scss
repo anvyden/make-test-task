@@ -30,19 +30,19 @@
 
   &__controls {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     grid-column: 1 / calc((($desktopColumns / 4) * 3) + 1);
+    grid-template-columns: 1fr 1fr;
     column-gap: $gutter;
     row-gap: calc($gutter * 1.5);
 
     @media screen and (max-width: $tabletWidth) {
-      grid-template-columns: 1fr;
       grid-column: 1 / calc((($tabletColumns / 4) * 3) + 1);
+      grid-template-columns: 1fr;
     }
 
     @media screen and (max-width: $mobileWidth) {
-      grid-template-columns: 1fr;
       grid-column: 1 / calc($mobileColumns + 1);
+      grid-template-columns: 1fr;
       column-gap: $mobileGutter;
       row-gap: calc($mobileGutter * 1.5);
     }

@@ -4,8 +4,8 @@
 .main-page {
   display: grid;
   grid-template-columns: repeat($desktopColumns, 1fr);
-  column-gap: $gutter;
   padding-top: calc($gutter * 1.5);
+  column-gap: $gutter;
 
   @media screen and (max-width: $tabletWidth) {
     grid-template-columns: repeat($tabletColumns, 1fr);
@@ -13,8 +13,8 @@
 
   @media screen and (max-width: $mobileWidth) {
     grid-template-columns: repeat($mobileColumns, 1fr);
-    column-gap: $mobileGutter;
     padding-top: calc($mobileGutter * 1.5);
+    column-gap: $mobileGutter;
   }
 
   &__aside {
@@ -41,13 +41,4 @@
       grid-column: 1 / calc($mobileColumns + 1);
     }
   }
-
-  // &__task {
-  //   margin-bottom: calc($gutter * 2.5);
-
-  //   @media screen and (max-width: $mobileWidth) {
-  //     // grid-column: 1 / calc(($mobileColumns / 4) + 1);
-  //     margin-bottom: calc($mobileGutter * 2.5);
-  //   }
-  // }
 }

@@ -30,8 +30,8 @@
 
   &__fields {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     grid-column: 1 / calc((($desktopColumns / 4) * 3) + 1);
+    grid-template-columns: 1fr 1fr 1fr;
     column-gap: $gutter;
     row-gap: calc($gutter * 3.375);
 

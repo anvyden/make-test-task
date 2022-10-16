@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Graphik';
+  font-family: Graphik;
   src: url('./regular/Graphik-Regular-Web.eot');
   src: url('./regular/Graphik-Regular-Web.eot?#iefix')
       format('embedded-opentype'),
@@ -9,9 +9,9 @@
 }
 
 @font-face {
-  font-style: italic;
   font-weight: normal;
-  font-family: 'Graphik';
+  font-family: Graphik;
+  font-style: italic;
   src: url('./regularItalic/Graphik-RegularItalic-Web.eot');
   src: url('./regularItalic/Graphik-RegularItalic-Web.eot?#iefix')
       format('embedded-opentype'),
@@ -22,8 +22,8 @@
 
 @font-face {
   font-weight: 500;
+  font-family: Graphik;
   font-style: normal;
-  font-family: 'Graphik';
   src: url('./medium/Graphik-Medium-Web.eot');
   src: url('./medium/Graphik-Medium-Web.eot?#iefix') format('embedded-opentype'),
     url('./medium/Graphik-Medium-Web.woff2') format('woff2'),
@@ -33,8 +33,8 @@
 
 @font-face {
   font-weight: 700;
+  font-family: Graphik;
   font-style: normal;
-  font-family: 'Graphik';
   src: url('./bold/Graphik-Bold-Web.eot');
   src: url('./bold/Graphik-Bold-Web.eot?#iefix') format('embedded-opentype'),
     url('./bold/Graphik-Bold-Web.woff2') format('woff2'),
@@ -44,8 +44,8 @@
 
 @font-face {
   font-weight: 900;
+  font-family: Graphik;
   font-style: normal;
-  font-family: 'Graphik';
   src: url('./black/Graphik-Black-Web.eot');
   src: url('./black/Graphik-Black-Web.eot?#iefix') format('embedded-opentype'),
     url('./black/Graphik-Black-Web.woff2') format('woff2'),

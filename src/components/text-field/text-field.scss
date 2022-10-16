@@ -5,8 +5,8 @@
 
   &__state {
     position: absolute;
-    left: 0;
     top: calc($gutter * -1.25);
+    left: 0;
     transform: translateY(-100%);
 
     @media screen and (max-width: $mobileWidth) {
@@ -15,22 +15,22 @@
   }
 
   &__prompt {
-    visibility: hidden;
     position: absolute;
-    left: 0;
     top: 0;
-    transform: translateY(0);
-    opacity: 0;
+    left: 0;
+    z-index: 1;
+    color: $secondaryColor;
     font-size: 12px;
     line-height: 20px;
-    color: $secondaryColor;
+    transform: translateY(0);
+    visibility: hidden;
+    opacity: 0;
     transition: top 0.5s, transform 0.5s, opacity 0.5s, visibility 0.5s;
-    z-index: 1;
 
     &--visible {
-      visibility: visible;
       top: -4px;
       transform: translateY(-100%);
+      visibility: visible;
       opacity: 1;
     }
   }
@@ -39,39 +39,10 @@
     position: relative;
   }
 
-  &__input {
-    width: 100%;
-    padding-bottom: 6px;
-    border: none;
-    font-family: inherit;
-    font-size: 16px;
-    line-height: 24px;
-    outline: none;
-
-    &:hover,
-    &--hovered {
-      + .text-field {
-        &__border {
-          background-color: $activeColor;
-        }
-      }
-    }
-
-    &:focus-visible,
-    &--focused {
-      + .text-field {
-        &__border {
-          height: 4px;
-          background-color: $activeColor;
-        }
-      }
-    }
-  }
-
   &__border {
     position: absolute;
-    left: 0;
     bottom: 0;
+    left: 0;
     width: 100%;
     height: 2px;
     background-color: $inputBorder;
@@ -79,10 +50,10 @@
   }
 
   &__error {
-    visibility: hidden;
     position: absolute;
     bottom: -6px;
     transform: translateY(100%);
+    visibility: hidden;
   }
 
   &--invalid {
@@ -100,6 +71,50 @@
       &__error {
         visibility: visible;
         animation: shaking 0.5s ease;
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding-bottom: 6px;
+    font-size: 16px;
+    font-family: inherit;
+    line-height: 24px;
+    border: none;
+    outline: none;
+
+    &--hovered {
+      + .text-field {
+        &__border {
+          background-color: $activeColor;
+        }
+      }
+    }
+
+    &--focused {
+      + .text-field {
+        &__border {
+          height: 4px;
+          background-color: $activeColor;
+        }
+      }
+    }
+
+    &:hover {
+      + .text-field {
+        &__border {
+          background-color: $activeColor;
+        }
+      }
+    }
+
+    &:focus-visible {
+      + .text-field {
+        &__border {
+          height: 4px;
+          background-color: $activeColor;
+        }
       }
     }
   }
@@ -122,7 +137,7 @@
     }
 
     100% {
-      left: 0px;
+      left: 0;
     }
   }
 }

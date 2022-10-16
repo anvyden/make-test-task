@@ -14,12 +14,12 @@
   &__item {
     &-link {
       display: inline-block;
+      color: $secondaryColor;
       font-size: 14px;
       line-height: 20px;
-      color: $secondaryColor;
-      cursor: pointer;
       text-decoration: none;
       outline: none;
+      cursor: pointer;
 
       &--active {
         color: $activeColor;
