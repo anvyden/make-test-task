@@ -18,16 +18,16 @@
     display: grid;
     grid-template-columns: repeat($desktopColumns, 1fr);
     column-gap: $gutter;
-    max-width: 1312px;
+    max-width: $desktopMaxWidthContent;
 
-    @media screen and (max-width: 1199px) {
+    @media screen and (max-width: $tabletWidth) {
       grid-template-columns: repeat($tabletColumns, 1fr);
-      max-width: 928px;
+      max-width: $tableMaxWidthContent;
     }
 
-    @media screen and (max-width: 735px) {
+    @media screen and (max-width: $mobileWidth) {
       grid-template-columns: repeat($mobileColumns, 1fr);
-      max-width: 424px;
+      max-width: $mobileMaxWidthContent;
       column-gap: $mobileGutter;
     }
   }
@@ -41,13 +41,13 @@
     padding: calc($gutter * 0.75) 0 calc($gutter * 1.25) calc($gutter * 1.75);
     background: $white;
 
-    @media screen and (max-width: 1199px) {
+    @media screen and (max-width: $tabletWidth) {
       grid-column: 1 / calc(($tabletColumns / 4) * 3);
       padding: calc($gutter * 0.75) calc($gutter * 0.625) calc($gutter * 1.25)
         calc($gutter * 0.9375);
     }
 
-    @media screen and (max-width: 735px) {
+    @media screen and (max-width: $mobileWidth) {
       grid-column: 1 / calc($mobileColumns + 1);
       column-gap: $mobileGutter;
       row-gap: calc($mobileGutter * 1.5);
@@ -62,11 +62,11 @@
     column-gap: $gutter;
     align-items: center;
 
-    @media screen and (max-width: 1199px) {
+    @media screen and (max-width: $tabletWidth) {
       grid-template-columns: repeat(calc((($tabletColumns / 4) * 2) + 1), 1fr);
     }
 
-    @media screen and (max-width: 735px) {
+    @media screen and (max-width: $mobileWidth) {
       grid-template-columns: 1fr;
       column-gap: $mobileGutter;
       row-gap: $mobileGutter;
@@ -75,7 +75,7 @@
     &-text {
       grid-column: 2 / calc(($desktopColumns / 4) + 1);
 
-      @media screen and (max-width: 735px) {
+      @media screen and (max-width: $mobileWidth) {
         grid-column: auto;
       }
     }
@@ -201,6 +201,7 @@
     width: 24px;
     height: 24px;
     background: url('~/components/menu/img/cross.svg') no-repeat center;
+    cursor: pointer;
     outline: none;
 
     &:hover,
