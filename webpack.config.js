@@ -140,10 +140,6 @@ const jsLoaders = () => {
     },
   ];
 
-  if (isDev) {
-    loaders.push();
-  }
-
   return loaders;
 };
 
