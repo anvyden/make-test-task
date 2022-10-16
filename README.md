@@ -10,7 +10,7 @@
 - Для сборки проекта был использован [Webpack](https://webpack.js.org).
 - Для преобразования кода ES6 в более старую версию JavaScript был использован [Babel](https://babeljs.io), а для соблюдения кроссбраузерности и компактности CSS был использован [PostCSS](https://postcss.org)
 - Для соблюдения единобразия и чистоты кода был использован [стайлгайд от AirBnB](https://github.com/airbnb/javascript), который проверялся линтером [eslint](https://eslint.org/) и [stylelint](https://stylelint.io)
-- Разработка велась под последние версии Chrome и Firefox (last 3 version)
+- Разработка велась под последние версии Chrome и Firefox и др. (last 3 version)
 
 ## Особенности
 
